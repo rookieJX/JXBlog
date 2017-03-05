@@ -19,6 +19,8 @@
 + (NSArray *)lxhEmotions;
 /** 最近表情 */
 + (NSArray *)recentEmotions;
+/** 最近表情 */
++ (HMEmotion *)emotionWithDesc:(NSString *)desc;
 
 // 添加最近表情
 + (void)addRecentEmotion:(HMEmotion *)emotion;

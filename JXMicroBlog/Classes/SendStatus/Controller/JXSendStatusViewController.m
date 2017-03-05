@@ -7,7 +7,7 @@
 //  发状态控制器
 
 #import "JXSendStatusViewController.h"
-#import "JXTextView.h" // 自定义TextView
+#import "JXEmotionTextView.h"
 #import "JXComposeToolBar.h" // 自定义工具条
 #import "JXComposePhotoView.h" // 添加相册
 #import "JXSendStatusWithOutPhotoParams.h" //  发表没有图片的微博参数
@@ -17,7 +17,7 @@
 
 @interface JXSendStatusViewController ()<JXComposeToolBarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 /** 自定义TextView */
-@property (nonatomic,weak) JXTextView * textView;
+@property (nonatomic,weak) JXEmotionTextView * textView;
 /** 选择相册 */
 @property (nonatomic,strong) UIImagePickerController * picker;
 /** 工具条 */
@@ -71,12 +71,15 @@
 // 表情键盘
 - (void)emotionKeyboardClick:(NSNotification *)notification {
     HMEmotion *emotion = notification.userInfo[kJXDidSelectedEmotion];
-    JXLog(@"%@--%@",emotion.chs,emotion.emoji);
+    
+    [self.textView appendEmotion:emotion];
+    // 检测当前textView,确保只有一个图片的时候也能发表
+    [self textViewDidChange:self.textView];
 }
 
 // 删除按钮点击
 - (void)emotionKeyboardDeleteClick:(NSNotification *)notification {
-    JXLog(@"点击删除");
+    [self.textView deleteBackward];
 }
 
 
@@ -143,10 +146,16 @@
         self.toolBar.showEmotion = NO;
     }
     
+    
     [self.textView resignFirstResponder];
+    
+    self.changeKayboard = NO;
+
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView becomeFirstResponder];
     });
+    
     
 }
 #pragma mark - picker photo from crame && library
@@ -191,7 +200,7 @@
 
 // 发表文字
 - (void)setupTextView {
-    JXTextView *textView = [[JXTextView alloc] init];
+    JXEmotionTextView *textView = [[JXEmotionTextView alloc] init];
     textView.frame = CGRectMake(0, 0, kWidth, kHeight - kStatusH - kNavigateH);
     textView.backgroundColor = [UIColor whiteColor];
     textView.font = [UIFont systemFontOfSize:17.0f];
@@ -241,10 +250,7 @@
 // 键盘隐藏
 - (void)keyboardWillHide:(NSNotification *)note {
     
-    if (self.isChangeKayboard) {
-        self.changeKayboard = NO;
-        return;
-    }
+    if (self.isChangeKayboard) return;
     
     CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     [UIView animateWithDuration:duration animations:^{
@@ -260,7 +266,8 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    self.navigationItem.rightBarButtonItem.enabled = textView.text.length != 0;
+    
+    self.navigationItem.rightBarButtonItem.enabled = textView.attributedText.length != 0;
 }
 // 创建导航
 - (void)setupNavigation {
@@ -297,7 +304,7 @@
     JXSendStatusWithOutPhotoParams *sendStatusWithOutParams = [[JXSendStatusWithOutPhotoParams alloc] init];
     JXAccount *account = [JXAccountTool account];
     sendStatusWithOutParams.access_token = account.access_token;
-    sendStatusWithOutParams.status = self.textView.text;
+    sendStatusWithOutParams.status = [self.textView getTextViewString ];
     
     [JXComposeTool composeWithOutPhotoStatusWithParams:sendStatusWithOutParams success:^(id responseObj) {
         [MBProgressHUD showSuccess:@"发表成功"];

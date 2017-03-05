@@ -58,8 +58,13 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    [super setAttributedText:attributedText];
+    [self textChange];
+}
 - (void)textChange {
-    self.placeHolderLabel.hidden = self.text.length != 0;
+    self.placeHolderLabel.hidden = self.attributedText.length != 0;
 }
 #pragma mark - 布局
 - (void)layoutSubviews {

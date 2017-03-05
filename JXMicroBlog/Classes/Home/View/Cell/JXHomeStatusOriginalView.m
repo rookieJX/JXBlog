@@ -104,7 +104,7 @@
         [self.nameButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
-    self.contentLabel.text = originalFrame.originalStatus.text;
+    self.contentLabel.attributedText = originalFrame.originalStatus.attributeText;
     self.contentLabel.frame = originalFrame.contentFrame;
     
     self.timeLabel.text = originalFrame.originalStatus.created_at;

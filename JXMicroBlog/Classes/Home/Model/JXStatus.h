@@ -17,6 +17,8 @@
 @property (nonatomic,copy) NSString * idstr;
 /** 微博信息内容 */
 @property (nonatomic,copy) NSString * text;
+/** 微博信息内容富文本 */
+@property (nonatomic,copy) NSAttributedString * attributeText;
 /** 微博来源 */
 @property (nonatomic,copy) NSString * source;
 /** 缩略图片地址，没有时不返回此字段 */

@@ -53,6 +53,11 @@
 		26166A191E68619400BF4435 /* JXEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A181E68619400BF4435 /* JXEmotionView.m */; };
 		26166A2E1E69BDE500BF4435 /* JXEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A2D1E69BDE500BF4435 /* JXEmotionPopView.m */; };
 		26166A321E6A721800BF4435 /* JXEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A311E6A721800BF4435 /* JXEmotionTool.m */; };
+		26166A351E6BFF1A00BF4435 /* JXEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A341E6BFF1A00BF4435 /* JXEmotionTextView.m */; };
+		26166A391E6C428800BF4435 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A381E6C428800BF4435 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		26166A3B1E6C42C200BF4435 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26166A3A1E6C42C200BF4435 /* libicucore.tbd */; };
+		26166A3E1E6C569900BF4435 /* JXEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A3D1E6C569900BF4435 /* JXEmotionAttachment.m */; };
+		26166A411E6C60AA00BF4435 /* JXRegexReult.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A401E6C60AA00BF4435 /* JXRegexReult.m */; };
 		261E55761E55F40B0062C9EE /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55751E55F40B0062C9EE /* JXTextView.m */; };
 		261E557C1E57E37C0062C9EE /* JXComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E557B1E57E37C0062C9EE /* JXComposeToolBar.m */; };
 		261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55EC1E58801D0062C9EE /* JXComposePhotoView.m */; };
@@ -196,6 +201,15 @@
 		26166A2D1E69BDE500BF4435 /* JXEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXEmotionPopView.m; sourceTree = "<group>"; };
 		26166A301E6A721800BF4435 /* JXEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXEmotionTool.h; sourceTree = "<group>"; };
 		26166A311E6A721800BF4435 /* JXEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXEmotionTool.m; sourceTree = "<group>"; };
+		26166A331E6BFF1A00BF4435 /* JXEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXEmotionTextView.h; sourceTree = "<group>"; };
+		26166A341E6BFF1A00BF4435 /* JXEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXEmotionTextView.m; sourceTree = "<group>"; };
+		26166A371E6C428800BF4435 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		26166A381E6C428800BF4435 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		26166A3A1E6C42C200BF4435 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		26166A3C1E6C569900BF4435 /* JXEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXEmotionAttachment.h; sourceTree = "<group>"; };
+		26166A3D1E6C569900BF4435 /* JXEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXEmotionAttachment.m; sourceTree = "<group>"; };
+		26166A3F1E6C60AA00BF4435 /* JXRegexReult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXRegexReult.h; sourceTree = "<group>"; };
+		26166A401E6C60AA00BF4435 /* JXRegexReult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXRegexReult.m; sourceTree = "<group>"; };
 		261E55741E55F40B0062C9EE /* JXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextView.h; sourceTree = "<group>"; };
 		261E55751E55F40B0062C9EE /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		261E557A1E57E37C0062C9EE /* JXComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXComposeToolBar.h; sourceTree = "<group>"; };
@@ -264,6 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26166A3B1E6C42C200BF4435 /* libicucore.tbd in Frameworks */,
 				798413EC647613774A9E0D2E /* libPods-JXMicroBlog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +438,8 @@
 				267678BA1E534D01000D2492 /* JXUserModel.m */,
 				267678BC1E534E0D000D2492 /* JXStatus.h */,
 				267678BD1E534E0D000D2492 /* JXStatus.m */,
+				26166A3F1E6C60AA00BF4435 /* JXRegexReult.h */,
+				26166A401E6C60AA00BF4435 /* JXRegexReult.m */,
 				267678BF1E5350A8000D2492 /* JXPhoto.h */,
 				267678C01E5350A8000D2492 /* JXPhoto.m */,
 				261E55F11E589A830062C9EE /* JXShowUserParams.h */,
@@ -485,6 +502,7 @@
 		2606B8F81DFEF3FA00DB56E7 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				26166A361E6C428800BF4435 /* RegexKitLite */,
 				2616628C1E62D6D000BF4435 /* MJPhotoBrowser */,
 				267678B71E533FF1000D2492 /* Foundation+Log.m */,
 				26B77FE61E509561008B5641 /* MBProgressHUD */,
@@ -653,6 +671,8 @@
 				26166A181E68619400BF4435 /* JXEmotionView.m */,
 				26166A2C1E69BDE500BF4435 /* JXEmotionPopView.h */,
 				26166A2D1E69BDE500BF4435 /* JXEmotionPopView.m */,
+				26166A331E6BFF1A00BF4435 /* JXEmotionTextView.h */,
+				26166A341E6BFF1A00BF4435 /* JXEmotionTextView.m */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -664,6 +684,15 @@
 				26166A311E6A721800BF4435 /* JXEmotionTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		26166A361E6C428800BF4435 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				26166A371E6C428800BF4435 /* RegexKitLite.h */,
+				26166A381E6C428800BF4435 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
 			sourceTree = "<group>";
 		};
 		26588C901E4CAC8700AEE4BC /* SendStatus */ = {
@@ -693,6 +722,8 @@
 				2616648F1E65BC2400BF4435 /* HMEmotion.m */,
 				261E55EE1E588B350062C9EE /* JXSendStatusWithOutPhotoParams.h */,
 				261E55EF1E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m */,
+				26166A3C1E6C569900BF4435 /* JXEmotionAttachment.h */,
+				26166A3D1E6C569900BF4435 /* JXEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -815,6 +846,7 @@
 		4200F715562D5B7ADFC2C068 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26166A3A1E6C42C200BF4435 /* libicucore.tbd */,
 				51320E8300D6FFDD164ECC25 /* libPods-JXMicroBlog.a */,
 			);
 			name = Frameworks;
@@ -1011,6 +1043,7 @@
 				2616608F1E5B43B500BF4435 /* JXHomeStautsDetailView.m in Sources */,
 				2606B99C1E00423400DB56E7 /* JXDiscoveryController.m in Sources */,
 				261662A31E62D6D000BF4435 /* SDWebImageManager+MJ.m in Sources */,
+				26166A391E6C428800BF4435 /* RegexKitLite.m in Sources */,
 				2606B9961E00421300DB56E7 /* JXMeController.m in Sources */,
 				26B77FFC1E51FA7E008B5641 /* JXAccount.m in Sources */,
 				261660891E5B437200BF4435 /* JXHomeStatusCell.m in Sources */,
@@ -1029,6 +1062,7 @@
 				261E55761E55F40B0062C9EE /* JXTextView.m in Sources */,
 				2606B9991E00422300DB56E7 /* JXMessageController.m in Sources */,
 				261662341E5C8B3000BF4435 /* JXHomeRetweetFrame.m in Sources */,
+				26166A3E1E6C569900BF4435 /* JXEmotionAttachment.m in Sources */,
 				26DB7E991E59DF1B0057ACDC /* JXHomeUnreadeCountModel.m in Sources */,
 				267678BE1E534E0D000D2492 /* JXStatus.m in Sources */,
 				2616608C1E5B438600BF4435 /* JXHomeStautsToolBar.m in Sources */,
@@ -1048,6 +1082,7 @@
 				261E55F61E5983F40062C9EE /* JXStatusTool.m in Sources */,
 				2606B8BB1DFEEFFA00DB56E7 /* main.m in Sources */,
 				26166A0E1E671BE700BF4435 /* NSString+Emoji.m in Sources */,
+				26166A411E6C60AA00BF4435 /* JXRegexReult.m in Sources */,
 				267678B81E533FF1000D2492 /* Foundation+Log.m in Sources */,
 				261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */,
 				267678B61E533D6C000D2492 /* JXHomeParams.m in Sources */,
@@ -1061,6 +1096,7 @@
 				261660921E5B443B00BF4435 /* JXHomeStatusOriginalView.m in Sources */,
 				2606B99F1E00423F00DB56E7 /* JXHomeController.m in Sources */,
 				2616629E1E62D6D000BF4435 /* MJPhotoBrowser.m in Sources */,
+				26166A351E6BFF1A00BF4435 /* JXEmotionTextView.m in Sources */,
 				26B77FE11E508AC8008B5641 /* JXOAuthController.m in Sources */,
 				261662AD1E63156D00BF4435 /* JXEmotionListView.m in Sources */,
 				2606B98B1E00418A00DB56E7 /* JXTabBarController.m in Sources */,

@@ -78,5 +78,26 @@ static NSMutableArray *_recentEmotions;
     [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:JXRecentEmotionFilePath];;
 }
 
++ (HMEmotion *)emotionWithDesc:(NSString *)desc {
+    if (!desc) return nil;
+    __block HMEmotion *foundEmotion = nil;
+    [[self defaultEmotions] enumerateObjectsUsingBlock:^(HMEmotion *emotion, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([desc isEqualToString:foundEmotion.chs] || [desc isEqualToString:foundEmotion.cht]) {
+            foundEmotion = emotion;
+            *stop = YES;
+        }
+    }];
+    
+    if (foundEmotion) return foundEmotion;
+    
+    [[self lxhEmotions] enumerateObjectsUsingBlock:^(HMEmotion *emotion, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([desc isEqualToString:foundEmotion.chs] || [desc isEqualToString:foundEmotion.cht]) {
+            foundEmotion = emotion;
+            *stop = YES;
+        }
+    }];
+    
+    return foundEmotion;
+}
 
 @end

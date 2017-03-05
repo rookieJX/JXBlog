@@ -62,7 +62,7 @@
     [self.nameButton setTitle:name forState:UIControlStateNormal];
     self.nameButton.frame = retweetFrame.nameFrame;
     
-    self.contentLabel.text = retweetFrame.retweetStatus.text;
+    self.contentLabel.attributedText = retweetFrame.retweetStatus.attributeText;
     self.contentLabel.frame = retweetFrame.contentFrame;
     
     // 配图

@@ -8,6 +8,10 @@
 
 #import "JXStatus.h"
 #import "JXPhoto.h"
+#import "RegexKitLite.h"
+#import "JXRegexReult.h"
+#import "JXEmotionAttachment.h"
+#import "JXEmotionTool.h"
 
 @implementation JXStatus
 
@@ -60,6 +64,96 @@
     
 //    _source = [NSString stringWithFormat:@"来自%@", subsource];
     _source = [NSString stringWithFormat:@"来自%@", @"智障"];
+}
+
+
+// 根据匹配规则以及需要匹配的文字来进行排序,返回的结果为排序完成的数组
+- (NSArray *)regexResultWithText:(NSString *)text regex:(NSString *)regex{
+    // 存放匹配到字符
+    NSMutableArray *results = [NSMutableArray array];
+    // 获取匹配到的字符
+    [regex enumerateStringsMatchedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        JXRegexReult *result = [[JXRegexReult alloc] init];
+        result.range = *capturedRanges;
+        result.string = *capturedStrings;
+        result.emotion = YES;
+        [results addObject:result];
+    }];
+    // 获取除匹配到之外的字符
+    [text enumerateStringsSeparatedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        JXRegexReult *result = [[JXRegexReult alloc] init];
+        result.range = *capturedRanges;
+        result.string = *capturedStrings;
+        result.emotion = NO;
+        [results addObject:result];
+    }];
+    // 排序
+    [results sortUsingComparator:^NSComparisonResult(JXRegexReult *result1, JXRegexReult *result2) {
+        NSInteger loc1 = result1.range.location;
+        NSInteger loc2 = result2.range.location;
+        return [@(loc1) compare:@(loc2)];
+        
+        //        if (loc1 < loc2) { // 升序(右边大)
+        //            return NSOrderedAscending;
+        //        } else if (loc1 > loc2) {
+        //            return NSOrderedDescending;
+        //        } else {
+        //            return NSOrderedSame;
+        //        }
+    }];
+    
+    return results;
+
+}
+- (void)setText:(NSString *)text {
+    _text = [text copy];
+    
+    // 正则匹配规则
+    NSString *regex = @"\\[[0-9a-zA-Z\\u4e00-\\u9fa5]+\\]";
+    
+    NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] init];
+
+    NSArray *results = [self regexResultWithText:text regex:regex];
+    
+    // 遍历数组开始拼接
+     [results enumerateObjectsUsingBlock:^(JXRegexReult *result, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (result.isEmotion) { // 是表情
+            // 图片
+            HMEmotion *emotion = [JXEmotionTool emotionWithDesc:result.string];
+            JXEmotionAttachment *attachment = [[JXEmotionAttachment alloc] init];
+            attachment.emotion = emotion;
+            attachment.bounds = CGRectMake(0, -3, kHomeOriginalContentFont.lineHeight, kHomeOriginalContentFont.lineHeight);
+            NSAttributedString *imageAttribute = [NSAttributedString attributedStringWithAttachment:attachment];
+            [attributeText appendAttributedString:imageAttribute];
+        } else { // 普通文本
+            NSMutableAttributedString *subAttribute = [[NSMutableAttributedString alloc] initWithString:result.string];
+            // 匹配 ##
+            NSString *trendRegex = @"#[0-9a-zA-Z\\u4e00-\\u9fa5]+#";
+            [result.string enumerateStringsMatchedByRegex:trendRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+            }];
+            
+            // 匹配 @
+            NSString *mentionRegex = @"@[0-9a-zA-Z\\u4e00-\\u9fa5\\-]+ ?";
+            [result.string enumerateStringsMatchedByRegex:mentionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+            }];
+            
+            // 匹配超链接
+            // 匹配超链接
+            NSString *httpRegex = @"http(s)?://([a-zA-Z|\\d]+\\.)+[a-zA-Z|\\d]+(/[a-zA-Z|\\d|\\-|\\+|_./?%&=]*)?";
+            [result.string enumerateStringsMatchedByRegex:httpRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+            }];
+            
+            
+            [attributeText appendAttributedString:subAttribute];
+        }
+    }];
+    
+    [attributeText addAttribute:NSFontAttributeName value:kHomeOriginalContentFont range:NSMakeRange(0, attributeText.length)];
+   
+    self.attributeText = attributeText;
 }
 
 @end
