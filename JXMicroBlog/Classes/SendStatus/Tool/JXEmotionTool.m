@@ -80,9 +80,10 @@ static NSMutableArray *_recentEmotions;
 
 + (HMEmotion *)emotionWithDesc:(NSString *)desc {
     if (!desc) return nil;
+    
     __block HMEmotion *foundEmotion = nil;
     [[self defaultEmotions] enumerateObjectsUsingBlock:^(HMEmotion *emotion, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([desc isEqualToString:foundEmotion.chs] || [desc isEqualToString:foundEmotion.cht]) {
+        if ([desc isEqualToString:emotion.chs] || [desc isEqualToString:emotion.cht]) {
             foundEmotion = emotion;
             *stop = YES;
         }
@@ -91,7 +92,7 @@ static NSMutableArray *_recentEmotions;
     if (foundEmotion) return foundEmotion;
     
     [[self lxhEmotions] enumerateObjectsUsingBlock:^(HMEmotion *emotion, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([desc isEqualToString:foundEmotion.chs] || [desc isEqualToString:foundEmotion.cht]) {
+        if ([desc isEqualToString:emotion.chs] || [desc isEqualToString:emotion.cht]) {
             foundEmotion = emotion;
             *stop = YES;
         }

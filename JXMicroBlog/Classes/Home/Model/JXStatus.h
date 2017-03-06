@@ -40,4 +40,7 @@
 /** 数组内为模型 */
 @property (nonatomic,strong) NSArray * pic_urls;
 
+/** 判断是否是转发微博 */
+@property (nonatomic,assign,getter=isRetweeted) BOOL retweeted;
+
 @end

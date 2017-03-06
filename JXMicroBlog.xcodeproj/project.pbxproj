@@ -68,6 +68,7 @@
 		261E55FC1E5990BA0062C9EE /* JXComposeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55FB1E5990BA0062C9EE /* JXComposeTool.m */; };
 		263216421E48D77200E00F11 /* JXPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263216411E48D77200E00F11 /* JXPopView.m */; };
 		2632164B1E4A15F500E00F11 /* JXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2632164A1E4A15F500E00F11 /* JXTabBar.m */; };
+		263828F81E6DB7CC000E2E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263828F71E6DB7CC000E2E8A /* Foundation.framework */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -230,6 +231,8 @@
 		263216411E48D77200E00F11 /* JXPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPopView.m; sourceTree = "<group>"; };
 		263216491E4A15F500E00F11 /* JXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTabBar.h; sourceTree = "<group>"; };
 		2632164A1E4A15F500E00F11 /* JXTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTabBar.m; sourceTree = "<group>"; };
+		263828F51E6DB715000E2E8A /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		263828F71E6DB7CC000E2E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263828F81E6DB7CC000E2E8A /* Foundation.framework in Frameworks */,
 				26166A3B1E6C42C200BF4435 /* libicucore.tbd in Frameworks */,
 				798413EC647613774A9E0D2E /* libPods-JXMicroBlog.a in Frameworks */,
 			);
@@ -846,6 +850,8 @@
 		4200F715562D5B7ADFC2C068 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				263828F71E6DB7CC000E2E8A /* Foundation.framework */,
+				263828F51E6DB715000E2E8A /* libicucore.A.tbd */,
 				26166A3A1E6C42C200BF4435 /* libicucore.tbd */,
 				51320E8300D6FFDD164ECC25 /* libPods-JXMicroBlog.a */,
 			);

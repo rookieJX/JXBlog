@@ -13,8 +13,6 @@
 #import "JXHomeStatusPhotosView.h" // 配图
 
 @interface JXHomeStatusRetweetView ()
-/** 昵称 */
-@property (nonatomic,weak) UIButton * nameButton;
 /** 内容 */
 @property (nonatomic,weak) UILabel * contentLabel;
 /** 配图 */
@@ -29,13 +27,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = kRGBColor(238, 238, 238, 1.0);
-        // 创建昵称
-        UIButton *nameButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self addSubview:nameButton];
-        self.nameButton = nameButton;
-        self.nameButton.titleLabel.font = kHomeRetweetNameFont;
-        [self.nameButton setTitleColor:kRGBColor(74, 102, 105, 1.0) forState:UIControlStateNormal];
-        
+
         // 创建内容
         UILabel *contentLabel = [[UILabel alloc] init];
         [self addSubview:contentLabel];
@@ -55,12 +47,6 @@
     _retweetFrame = retweetFrame;
     
     self.frame = retweetFrame.retweetFrame;
-    
-    JXUserModel *user = retweetFrame.retweetStatus.user;
-    
-    NSString *name = [NSString stringWithFormat:@"@%@",user.name];
-    [self.nameButton setTitle:name forState:UIControlStateNormal];
-    self.nameButton.frame = retweetFrame.nameFrame;
     
     self.contentLabel.attributedText = retweetFrame.retweetStatus.attributeText;
     self.contentLabel.frame = retweetFrame.contentFrame;

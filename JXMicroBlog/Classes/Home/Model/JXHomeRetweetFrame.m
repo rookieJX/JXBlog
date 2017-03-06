@@ -16,23 +16,23 @@
     _retweetStatus = retweetStatus;
     
     // 昵称
-    CGFloat nameX = kHomeCellMargin;
-    CGFloat nameY = kHomeCellMargin;
-    NSMutableDictionary *nameDict = [NSMutableDictionary dictionary];
-    nameDict[NSFontAttributeName] = kHomeRetweetNameFont;
-    NSString *name = [NSString stringWithFormat:@"@%@",retweetStatus.user.name];
-    CGSize nameSize = [name sizeWithAttributes:nameDict];
-    self.nameFrame = (CGRect){{nameX,nameY},nameSize};
+//    CGFloat nameX = kHomeCellMargin;
+//    CGFloat nameY = kHomeCellMargin;
+//    NSMutableDictionary *nameDict = [NSMutableDictionary dictionary];
+//    nameDict[NSFontAttributeName] = kHomeRetweetNameFont;
+//    NSString *name = [NSString stringWithFormat:@"@%@",retweetStatus.user.name];
+//    CGSize nameSize = [name sizeWithAttributes:nameDict];
+//    self.nameFrame = (CGRect){{nameX,nameY},nameSize};
 
     // 正文
-    CGFloat contentX = nameX;
-    CGFloat contentY = CGRectGetMaxY(self.nameFrame) + kHomeCellMargin;
+    CGFloat contentX = kHomeCellMargin;
+    CGFloat contentY = kHomeCellMargin;
     
     CGFloat contentMaxW = kWidth - 2 * contentX;
     CGSize contenSize = CGSizeMake(contentMaxW, MAXFLOAT);
 
                                                                                       
-    CGSize contentRectSize = [retweetStatus.text boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:kHomeRetweetContenFont} context:nil].size;
+    CGSize contentRectSize = [retweetStatus.attributeText boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;;
     self.contentFrame = (CGRect){{contentX,contentY},contentRectSize};
     
     // 配图

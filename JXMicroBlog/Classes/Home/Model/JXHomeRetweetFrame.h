@@ -12,8 +12,6 @@
 
 @interface JXHomeRetweetFrame : NSObject
 
-/** 昵称 */
-@property (nonatomic,assign) CGRect nameFrame;
 /** 内容 */
 @property (nonatomic,assign) CGRect contentFrame;
 /** 配图 */

@@ -12,6 +12,7 @@
 #import "JXRegexReult.h"
 #import "JXEmotionAttachment.h"
 #import "JXEmotionTool.h"
+#import "JXUserModel.h"
 
 @implementation JXStatus
 
@@ -72,7 +73,7 @@
     // 存放匹配到字符
     NSMutableArray *results = [NSMutableArray array];
     // 获取匹配到的字符
-    [regex enumerateStringsMatchedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+    [text enumerateStringsMatchedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
         JXRegexReult *result = [[JXRegexReult alloc] init];
         result.range = *capturedRanges;
         result.string = *capturedStrings;
@@ -105,21 +106,72 @@
     return results;
 
 }
+
+- (void)setRetweeted_status:(JXStatus *)retweeted_status {
+    _retweeted_status = retweeted_status;
+    self.retweeted = NO; // 当前自己发表的微博设置为NO
+    retweeted_status.retweeted = YES; // 说明是转发的微博
+}
+
+- (void)setRetweeted:(BOOL)retweeted { // 如果没有转发微博这个方法不会调用
+    _retweeted = retweeted;
+    if (retweeted) {
+        NSString *text = [NSString stringWithFormat:@"@%@:%@",self.user.name,self.text];
+        
+        NSAttributedString *attributeText = [self attributeStringWithText:text];
+        
+        self.attributeText = attributeText;
+    } else {
+        NSString *text = [NSString stringWithFormat:@"%@",self.text];
+        
+        NSAttributedString *attributeText = [self attributeStringWithText:text];
+        
+        self.attributeText = attributeText;
+    }
+}
+
 - (void)setText:(NSString *)text {
     _text = [text copy];
     
+    [self createAttributeString];
+    
+}
+
+- (void)setUser:(JXUserModel *)user {
+    _user = user;
+    
+     [self createAttributeString];
+}
+
+- (void)createAttributeString {
+    
+    if (self.user == nil || self.text == nil || self.attributeText != nil) return;
+    
+    NSString *text = [NSString stringWithFormat:@"%@",self.text];
+    JXLog(@"%@",text);
+    NSAttributedString *attributeText = [self attributeStringWithText:text];
+    
+    self.attributeText = attributeText;
+}
+
+- (NSAttributedString *)attributeStringWithText:(NSString *)text {
     // 正则匹配规则
     NSString *regex = @"\\[[0-9a-zA-Z\\u4e00-\\u9fa5]+\\]";
     
-    NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] init];
-
     NSArray *results = [self regexResultWithText:text regex:regex];
     
+    NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] init];
+    
     // 遍历数组开始拼接
-     [results enumerateObjectsUsingBlock:^(JXRegexReult *result, NSUInteger idx, BOOL * _Nonnull stop) {
+    [results enumerateObjectsUsingBlock:^(JXRegexReult *result, NSUInteger idx, BOOL * _Nonnull stop) {
+        HMEmotion *emotion = nil;
         if (result.isEmotion) { // 是表情
             // 图片
-            HMEmotion *emotion = [JXEmotionTool emotionWithDesc:result.string];
+            emotion = [JXEmotionTool emotionWithDesc:result.string];
+        }
+        
+        if (emotion) { // 如果有表情
+            
             JXEmotionAttachment *attachment = [[JXEmotionAttachment alloc] init];
             attachment.emotion = emotion;
             attachment.bounds = CGRectMake(0, -3, kHomeOriginalContentFont.lineHeight, kHomeOriginalContentFont.lineHeight);
@@ -152,8 +204,7 @@
     }];
     
     [attributeText addAttribute:NSFontAttributeName value:kHomeOriginalContentFont range:NSMakeRange(0, attributeText.length)];
-   
-    self.attributeText = attributeText;
+    
+    return attributeText;
 }
-
 @end

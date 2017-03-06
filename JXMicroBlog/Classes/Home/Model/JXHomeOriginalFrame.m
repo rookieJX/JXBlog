@@ -46,10 +46,7 @@
     CGFloat contentMaxW = kWidth - 2 * contentX;
     CGSize contenSize = CGSizeMake(contentMaxW, MAXFLOAT);
     
-    CGSize contentRectSize = [originalStatus.text boundingRectWithSize:contenSize
-                                                               options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
-                                                            attributes:@{NSFontAttributeName:kHomeOriginalContentFont}
-                                                               context:nil].size;
+    CGSize contentRectSize = [originalStatus.attributeText boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.contentFrame = (CGRect){{contentX,contentY},contentRectSize};
     
     // 配图
