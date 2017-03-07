@@ -148,7 +148,6 @@
     if (self.user == nil || self.text == nil || self.attributeText != nil) return;
     
     NSString *text = [NSString stringWithFormat:@"%@",self.text];
-    JXLog(@"%@",text);
     NSAttributedString *attributeText = [self attributeStringWithText:text];
     
     self.attributeText = attributeText;
@@ -183,12 +182,14 @@
             NSString *trendRegex = @"#[0-9a-zA-Z\\u4e00-\\u9fa5]+#";
             [result.string enumerateStringsMatchedByRegex:trendRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
                 [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+                [subAttribute addAttribute:kHomeStatusLinks value:*capturedStrings range:*capturedRanges];
             }];
             
             // 匹配 @
-            NSString *mentionRegex = @"@[0-9a-zA-Z\\u4e00-\\u9fa5\\-]+ ?";
+            NSString *mentionRegex = @"@[0-9a-zA-Z\\u4e00-\\u9fa5\\-_]+ ?";
             [result.string enumerateStringsMatchedByRegex:mentionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
                 [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+                [subAttribute addAttribute:kHomeStatusLinks value:*capturedStrings range:*capturedRanges];
             }];
             
             // 匹配超链接
@@ -196,6 +197,7 @@
             NSString *httpRegex = @"http(s)?://([a-zA-Z|\\d]+\\.)+[a-zA-Z|\\d]+(/[a-zA-Z|\\d|\\-|\\+|_./?%&=]*)?";
             [result.string enumerateStringsMatchedByRegex:httpRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
                 [subAttribute addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
+                [subAttribute addAttribute:kHomeStatusLinks value:*capturedStrings range:*capturedRanges]; 
             }];
             
             

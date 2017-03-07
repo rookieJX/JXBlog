@@ -11,12 +11,13 @@
 #import "JXStatus.h"
 #import "JXUserModel.h"
 #import "JXHomeStatusPhotosView.h" // 配图
+#import "JXStatusLabel.h" // 自定义Label
 
 @interface JXHomeStatusOriginalView ()
 /** 昵称 */
 @property (nonatomic,weak) UIButton * nameButton;
 /** 内容 */
-@property (nonatomic,weak) UILabel * contentLabel;
+@property (nonatomic,weak) JXStatusLabel * contentLabel;
 /** 时间 */
 @property (nonatomic,weak) UILabel * timeLabel;
 /** 来源 */
@@ -44,11 +45,9 @@
         [self.nameButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         // 创建内容
-        UILabel *contentLabel = [[UILabel alloc] init];
+        JXStatusLabel *contentLabel = [[JXStatusLabel alloc] init];
         [self addSubview:contentLabel];
         self.contentLabel = contentLabel;
-        self.contentLabel.font = kHomeOriginalContentFont;
-        self.contentLabel.numberOfLines = 0;
         
         // 创建时间
         UILabel *timeLabel = [[UILabel alloc] init];

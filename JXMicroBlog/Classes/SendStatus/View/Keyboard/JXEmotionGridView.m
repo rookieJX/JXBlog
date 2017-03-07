@@ -53,7 +53,7 @@
     __block JXEmotionView *foundEmotionView = nil;
     
     [self.emotionsArray enumerateObjectsUsingBlock:^(JXEmotionView * emotionView, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (CGRectContainsPoint(emotionView.frame, point)) {
+        if (CGRectContainsPoint(emotionView.frame, point) && emotionView.hidden == NO) {
             foundEmotionView = emotionView;
             // 如果找到就停止
             *stop = YES;

@@ -11,10 +11,11 @@
 #import "JXStatus.h"
 #import "JXUserModel.h"
 #import "JXHomeStatusPhotosView.h" // 配图
+#import "JXStatusLabel.h" // 自定义Label
 
 @interface JXHomeStatusRetweetView ()
 /** 内容 */
-@property (nonatomic,weak) UILabel * contentLabel;
+@property (nonatomic,weak) JXStatusLabel * contentLabel;
 /** 配图 */
 @property (nonatomic,weak) JXHomeStatusPhotosView * photosView;
 @end
@@ -29,11 +30,9 @@
         self.backgroundColor = kRGBColor(238, 238, 238, 1.0);
 
         // 创建内容
-        UILabel *contentLabel = [[UILabel alloc] init];
+        JXStatusLabel *contentLabel = [[JXStatusLabel alloc] init];
         [self addSubview:contentLabel];
         self.contentLabel = contentLabel;
-        self.contentLabel.font = kHomeRetweetContenFont;
-        self.contentLabel.numberOfLines = 0;
         
         // 创建配图
         JXHomeStatusPhotosView *photosView = [[JXHomeStatusPhotosView alloc] init];

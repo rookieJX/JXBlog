@@ -106,6 +106,9 @@
 #define kHomeRetweetNameFont kHomeOriginalTimeFont
 // 转发时间
 #define kHomeRetweetContenFont kHomeOriginalContentFont
+// 记录富文本中出现的连接等
+#define kHomeStatusLinks @"kHomeStatusLinks"
+
 
 /*************************** 发表心情 **********************************************/
 typedef enum {
