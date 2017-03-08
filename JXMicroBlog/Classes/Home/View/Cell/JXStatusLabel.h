@@ -11,4 +11,5 @@
 @interface JXStatusLabel : UIView
 /** 富文本 */
 @property (nonatomic,strong) NSAttributedString * attributedText;
+
 @end

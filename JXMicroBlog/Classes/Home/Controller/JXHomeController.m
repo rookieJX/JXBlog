@@ -45,6 +45,28 @@
     // 获取用户昵称
     [self setupUserName];
     
+    // 监听点击超链接
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(linkDidSelectedClick:)
+                                                 name:kJXLinkDidSelectedNotification
+                                               object:nil];
+    
+}
+
+
+- (void)linkDidSelectedClick:(NSNotification *)noti {
+    NSString *linkText = noti.userInfo[kHomeStatusLinks];
+    if ([linkText hasPrefix:@"http"]) {
+        // 直接打开连接
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkText]];
+    } else {
+        JXLog(@"%@",linkText);
+    }
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setupUserName {

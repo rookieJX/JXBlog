@@ -145,6 +145,8 @@ typedef enum {
 #define kJXEmotionDidDeleteNotification @"kJXEmotionDidDeleteNotification"
 // 键盘选中通知key
 #define kJXDidSelectedEmotion @"kJXDidSelectedEmotion"
+// 点击发出通知
+#define kJXLinkDidSelectedNotification @"kJXLinkDidSelectedNotification"
 #endif
 #endif /* JDPrefix_h */
 
