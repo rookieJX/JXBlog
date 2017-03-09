@@ -71,6 +71,9 @@
 		263828F81E6DB7CC000E2E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263828F71E6DB7CC000E2E8A /* Foundation.framework */; };
 		2638293A1E6EF706000E2E8A /* JXStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829391E6EF706000E2E8A /* JXStatusLabel.m */; };
 		263829891E703F32000E2E8A /* JXLinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829881E703F32000E2E8A /* JXLinkModel.m */; };
+		2638298D1E7195B9000E2E8A /* JXGlobalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638298C1E7195B9000E2E8A /* JXGlobalItem.m */; };
+		263829901E7195C7000E2E8A /* JXGlobalGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638298F1E7195C7000E2E8A /* JXGlobalGroup.m */; };
+		263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829951E719E4A000E2E8A /* JXGlobalCell.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -239,6 +242,12 @@
 		263829391E6EF706000E2E8A /* JXStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXStatusLabel.m; sourceTree = "<group>"; };
 		263829871E703F32000E2E8A /* JXLinkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLinkModel.h; sourceTree = "<group>"; };
 		263829881E703F32000E2E8A /* JXLinkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLinkModel.m; sourceTree = "<group>"; };
+		2638298B1E7195B9000E2E8A /* JXGlobalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalItem.h; sourceTree = "<group>"; };
+		2638298C1E7195B9000E2E8A /* JXGlobalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalItem.m; sourceTree = "<group>"; };
+		2638298E1E7195C7000E2E8A /* JXGlobalGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalGroup.h; sourceTree = "<group>"; };
+		2638298F1E7195C7000E2E8A /* JXGlobalGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalGroup.m; sourceTree = "<group>"; };
+		263829941E719E4A000E2E8A /* JXGlobalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalCell.h; sourceTree = "<group>"; };
+		263829951E719E4A000E2E8A /* JXGlobalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalCell.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -489,6 +498,7 @@
 		2606B8F61DFEF3FA00DB56E7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2638298A1E719587000E2E8A /* Model */,
 				26B77FF91E51FA56008B5641 /* Account */,
 				2606B8FE1DFEF41300DB56E7 /* Extension */,
 				2606B8F71DFEF3FA00DB56E7 /* Controller */,
@@ -538,6 +548,8 @@
 				260A85E51E01A68900B30406 /* JXTextField.m */,
 				263216491E4A15F500E00F11 /* JXTabBar.h */,
 				2632164A1E4A15F500E00F11 /* JXTabBar.m */,
+				263829941E719E4A000E2E8A /* JXGlobalCell.h */,
+				263829951E719E4A000E2E8A /* JXGlobalCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -707,6 +719,17 @@
 				26166A381E6C428800BF4435 /* RegexKitLite.m */,
 			);
 			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		2638298A1E719587000E2E8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2638298B1E7195B9000E2E8A /* JXGlobalItem.h */,
+				2638298C1E7195B9000E2E8A /* JXGlobalItem.m */,
+				2638298E1E7195C7000E2E8A /* JXGlobalGroup.h */,
+				2638298F1E7195C7000E2E8A /* JXGlobalGroup.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		26588C901E4CAC8700AEE4BC /* SendStatus */ = {
@@ -1074,10 +1097,12 @@
 				261E55F31E589A830062C9EE /* JXShowUserParams.m in Sources */,
 				261E55F01E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m in Sources */,
 				2606B9A21E0042CE00DB56E7 /* JXNavigationController.m in Sources */,
+				263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */,
 				2606B9061DFEF41300DB56E7 /* UIImage+XHExtension.m in Sources */,
 				26166A2E1E69BDE500BF4435 /* JXEmotionPopView.m in Sources */,
 				261E55761E55F40B0062C9EE /* JXTextView.m in Sources */,
 				2606B9991E00422300DB56E7 /* JXMessageController.m in Sources */,
+				263829901E7195C7000E2E8A /* JXGlobalGroup.m in Sources */,
 				261662341E5C8B3000BF4435 /* JXHomeRetweetFrame.m in Sources */,
 				26166A3E1E6C569900BF4435 /* JXEmotionAttachment.m in Sources */,
 				26DB7E991E59DF1B0057ACDC /* JXHomeUnreadeCountModel.m in Sources */,
@@ -1095,6 +1120,7 @@
 				261662B01E631B5A00BF4435 /* JXEmotionToolbar.m in Sources */,
 				26CE259C1E10172700A66622 /* JXTitleButton.m in Sources */,
 				26B77FF51E50A11C008B5641 /* JXOAuthGetTokenParams.m in Sources */,
+				2638298D1E7195B9000E2E8A /* JXGlobalItem.m in Sources */,
 				26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */,
 				261E55F61E5983F40062C9EE /* JXStatusTool.m in Sources */,
 				2606B8BB1DFEEFFA00DB56E7 /* main.m in Sources */,
