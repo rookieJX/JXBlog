@@ -15,7 +15,8 @@
 @property (nonatomic,copy) NSString * subTitle;
 /** 图片 */
 @property (nonatomic,copy) NSString * icon;
-
+/** 数字 */
+@property (nonatomic,copy) NSString * bageVaule;
 + (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon;
 + (instancetype)itemWithTitle:(NSString *)title;
 @end

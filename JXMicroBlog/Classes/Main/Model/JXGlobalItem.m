@@ -19,7 +19,7 @@
 
 
 + (instancetype)itemWithTitle:(NSString *)title {
-    return [self itemWithTitle:title icon:nil];
+    return [self itemWithTitle:title icon:nil]; 
 }
 
 @end

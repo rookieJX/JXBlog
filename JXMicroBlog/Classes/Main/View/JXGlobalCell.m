@@ -8,16 +8,76 @@
 
 #import "JXGlobalCell.h"
 #import "JXGlobalItem.h"
+#import "JXGlobalArrowItem.h"
+#import "JXGlobalSwitchItem.h"
+#import "JXGlobalTextItem.h"
+#import "JXBageView.h"
 
+@interface JXGlobalCell ()
+/** 箭头 */
+@property (nonatomic,strong) UIImageView * rightArrow;
+/** 开关 */
+@property (nonatomic,strong) UISwitch * rightSwitch;
+/** 文字 */
+@property (nonatomic,strong) UILabel * rightText;
+/** 提醒数字 */
+@property (nonatomic,strong) JXBageView * bageView;
+@end
 
 @implementation JXGlobalCell
 
+#pragma mark - setter
+- (UIImageView *)rightArrow{
+    if (_rightArrow == nil) {
+        _rightArrow =  [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_arrow"]];
+    }
+    return _rightArrow;
+}
+
+- (UISwitch *)rightSwitch{
+    if (_rightSwitch == nil) {
+        _rightSwitch = [[UISwitch alloc] init];
+    }
+    return _rightSwitch;
+}
+
+- (UILabel *)rightText{
+    if (_rightText == nil) {
+        _rightText = [[UILabel alloc] init];
+        _rightText.font = [UIFont systemFontOfSize:13];
+        _rightText.textColor = [UIColor lightGrayColor];
+    }
+    return _rightText;
+}
+
+- (JXBageView *)bageView{
+    if (_bageView == nil) {
+        _bageView = [[JXBageView alloc] init];
+    }
+    return _bageView;
+}
 - (void)setItem:(JXGlobalItem *)item {
     _item = item;
     
     self.imageView.image = [UIImage imageNamed:item.icon];
     self.textLabel.text = item.title;
     self.detailTextLabel.text = item.subTitle;
+    
+    if (item.bageVaule) {
+        self.bageView.bageVaule = item.bageVaule;
+        self.accessoryView = self.bageView;
+    }else if ([item isKindOfClass:[JXGlobalArrowItem class]]) {
+        self.accessoryView = self.rightArrow;
+    } else if ([item isKindOfClass:[JXGlobalSwitchItem class]]) {
+        self.accessoryView = self.rightSwitch;
+    } else if ([item isKindOfClass:[JXGlobalTextItem class]]) {
+        JXGlobalTextItem *textItem = (JXGlobalTextItem *)item;
+        self.rightText.text = textItem.text;
+        self.rightText.size = [textItem.text sizeWithAttributes:@{NSFontAttributeName:self.rightText.font}];
+        self.accessoryView = self.rightText;
+    } else {
+        self.accessoryView = nil;
+    }
     
 }
 
@@ -76,7 +136,7 @@
         selectView.image = [UIImage resizedImage:@"common_card_bottom_background_highlighted"];
         bgView.image = [UIImage resizedImage:@"common_card_bottom_background"];
     } else {
-        selectView.image = [UIImage resizedImage:@"common_card_middle_background_highlighted"];
+        selectView.image = [UIImage resizedImage:@"common_card_middle_background_highlighted "];
         bgView.image = [UIImage resizedImage:@"common_card_middle_background"];
     }
     

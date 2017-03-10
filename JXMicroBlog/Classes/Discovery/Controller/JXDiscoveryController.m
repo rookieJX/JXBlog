@@ -11,6 +11,9 @@
 #import "JXGlobalGroup.h" // 组数据
 #import "JXGlobalItem.h"
 #import "JXGlobalCell.h"
+#import "JXGlobalSwitchItem.h"
+#import "JXGlobalArrowItem.h"
+#import "JXGlobalTextItem.h"
 
 @interface JXDiscoveryController ()
 /** 数组 */
@@ -59,10 +62,11 @@
     group.footer = @"第0组组尾部";
     
     // 设置组的所有行数据
-    JXGlobalItem *hotItem = [JXGlobalItem itemWithTitle:@"热门微博" icon:@"hot_status"];
+    JXGlobalArrowItem *hotItem = [JXGlobalArrowItem itemWithTitle:@"热门微博" icon:@"hot_status"];
     hotItem.subTitle = @"笑话, 娱乐, 神什么鬼的都在这里";
+    hotItem.bageVaule = @"909";
     
-    JXGlobalItem *findItem = [JXGlobalItem itemWithTitle:@"招人" icon:@"find_people"];
+    JXGlobalArrowItem *findItem = [JXGlobalArrowItem itemWithTitle:@"招人" icon:@"find_people"];
     findItem.subTitle = @"你老公老婆都在这里";
     
     group.items = @[hotItem,findItem];
@@ -96,7 +100,8 @@
     group.footer = @"第2组组尾部";
     
     // 设置组的所有行数据
-    JXGlobalItem *videoItem = [JXGlobalItem itemWithTitle:@"视频" icon:@"video"];
+    JXGlobalTextItem *videoItem = [JXGlobalTextItem itemWithTitle:@"视频" icon:@"video"];
+    videoItem.text = @"超多好看电影";
     JXGlobalItem *musicItem = [JXGlobalItem itemWithTitle:@"音乐" icon:@"music"];
     JXGlobalItem *movieItem = [JXGlobalItem itemWithTitle:@"电影" icon:@"movie"];
     JXGlobalItem *castItem = [JXGlobalItem itemWithTitle:@"播客" icon:@"cast"];
