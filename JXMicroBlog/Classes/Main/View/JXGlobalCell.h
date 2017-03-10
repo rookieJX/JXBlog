@@ -14,6 +14,10 @@
 
 /** 模型 */
 @property (nonatomic,strong) JXGlobalItem * item;
+/** 行号 */
+@property (nonatomic,strong) NSIndexPath * indexPath;
+
+- (void)setIndexPath:(NSIndexPath *)indexPath totalRowsInSection:(NSInteger)totalRows;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

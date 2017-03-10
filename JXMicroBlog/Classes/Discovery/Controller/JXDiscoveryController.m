@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = kRGBColor(211, 211, 211, 1.0);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 10;
     
@@ -118,6 +119,7 @@
     JXGlobalGroup *group = self.groups[indexPath.section];
     JXGlobalItem *item = group.items[indexPath.row];
     cell.item = item;
+    cell.indexPath = indexPath;
     return cell;
 }
 
