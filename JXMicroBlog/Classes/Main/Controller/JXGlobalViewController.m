@@ -15,7 +15,8 @@
 #import "JXGlobalTextItem.h"
 
 @interface JXGlobalViewController ()
-
+/** 数组 */
+@property (nonatomic,strong) NSMutableArray * groups;
 @end
 
 @implementation JXGlobalViewController

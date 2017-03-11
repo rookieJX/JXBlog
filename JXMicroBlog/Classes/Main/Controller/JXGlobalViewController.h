@@ -10,7 +10,7 @@
 
 @interface JXGlobalViewController : UITableViewController
 
-/** 数组 */
-@property (nonatomic,strong) NSMutableArray * groups;
+// 暴露get方法来获取数组
+- (NSMutableArray *)groups;
 
 @end
