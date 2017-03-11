@@ -6,8 +6,8 @@
 //  Copyright © 2016年 王加祥. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "JXGlobalViewController.h"
 
-@interface JXDiscoveryController : UITableViewController
+@interface JXDiscoveryController : JXGlobalViewController
 
 @end

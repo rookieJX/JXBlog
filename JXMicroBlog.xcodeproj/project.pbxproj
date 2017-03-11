@@ -78,6 +78,10 @@
 		2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638299B1E7363A5000E2E8A /* JXGlobalSwitchItem.m */; };
 		2638299F1E736841000E2E8A /* JXGlobalTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638299E1E736841000E2E8A /* JXGlobalTextItem.m */; };
 		263829A21E736DFA000E2E8A /* JXBageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A11E736DFA000E2E8A /* JXBageView.m */; };
+		263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A41E73842A000E2E8A /* JXGlobalViewController.m */; };
+		263829A81E738B93000E2E8A /* JXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A71E738B93000E2E8A /* JXSettingController.m */; };
+		263829AB1E738DF4000E2E8A /* JXGlobalLogoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */; };
+		263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AD1E738EF5000E2E8A /* JXMeMessageController.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -260,6 +264,14 @@
 		2638299E1E736841000E2E8A /* JXGlobalTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalTextItem.m; sourceTree = "<group>"; };
 		263829A01E736DFA000E2E8A /* JXBageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBageView.h; sourceTree = "<group>"; };
 		263829A11E736DFA000E2E8A /* JXBageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBageView.m; sourceTree = "<group>"; };
+		263829A31E73842A000E2E8A /* JXGlobalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalViewController.h; sourceTree = "<group>"; };
+		263829A41E73842A000E2E8A /* JXGlobalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalViewController.m; sourceTree = "<group>"; };
+		263829A61E738B93000E2E8A /* JXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSettingController.h; sourceTree = "<group>"; };
+		263829A71E738B93000E2E8A /* JXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSettingController.m; sourceTree = "<group>"; };
+		263829A91E738DF4000E2E8A /* JXGlobalLogoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalLogoutItem.h; sourceTree = "<group>"; };
+		263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalLogoutItem.m; sourceTree = "<group>"; };
+		263829AC1E738EF5000E2E8A /* JXMeMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMeMessageController.h; sourceTree = "<group>"; };
+		263829AD1E738EF5000E2E8A /* JXMeMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMeMessageController.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -529,6 +541,8 @@
 				2606B9A11E0042CE00DB56E7 /* JXNavigationController.m */,
 				2606B9891E00418A00DB56E7 /* JXTabBarController.h */,
 				2606B98A1E00418A00DB56E7 /* JXTabBarController.m */,
+				263829A31E73842A000E2E8A /* JXGlobalViewController.h */,
+				263829A41E73842A000E2E8A /* JXGlobalViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -600,6 +614,10 @@
 			children = (
 				2606B9941E00421300DB56E7 /* JXMeController.h */,
 				2606B9951E00421300DB56E7 /* JXMeController.m */,
+				263829A61E738B93000E2E8A /* JXSettingController.h */,
+				263829A71E738B93000E2E8A /* JXSettingController.m */,
+				263829AC1E738EF5000E2E8A /* JXMeMessageController.h */,
+				263829AD1E738EF5000E2E8A /* JXMeMessageController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -748,6 +766,8 @@
 				2638299B1E7363A5000E2E8A /* JXGlobalSwitchItem.m */,
 				2638299D1E736841000E2E8A /* JXGlobalTextItem.h */,
 				2638299E1E736841000E2E8A /* JXGlobalTextItem.m */,
+				263829A91E738DF4000E2E8A /* JXGlobalLogoutItem.h */,
+				263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1110,6 +1130,7 @@
 				26166A321E6A721800BF4435 /* JXEmotionTool.m in Sources */,
 				2606B8FD1DFEF3FA00DB56E7 /* AppDelegate.m in Sources */,
 				263829991E736380000E2E8A /* JXGlobalArrowItem.m in Sources */,
+				263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */,
 				26B77FF11E50973D008B5641 /* JXHTTPTool.m in Sources */,
 				26B77FFF1E51FA90008B5641 /* JXAccountTool.m in Sources */,
 				2616628B1E627CF200BF4435 /* JXHomeStatusPhotoView.m in Sources */,
@@ -1117,6 +1138,7 @@
 				267678C11E5350A8000D2492 /* JXPhoto.m in Sources */,
 				261E55F31E589A830062C9EE /* JXShowUserParams.m in Sources */,
 				261E55F01E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m in Sources */,
+				263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */,
 				2606B9A21E0042CE00DB56E7 /* JXNavigationController.m in Sources */,
 				2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */,
 				263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */,
@@ -1137,7 +1159,9 @@
 				261E55FC1E5990BA0062C9EE /* JXComposeTool.m in Sources */,
 				26166A191E68619400BF4435 /* JXEmotionView.m in Sources */,
 				2616622E1E5C8AC900BF4435 /* JXHomeStatusFrame.m in Sources */,
+				263829AB1E738DF4000E2E8A /* JXGlobalLogoutItem.m in Sources */,
 				2616629F1E62D6D000BF4435 /* MJPhotoLoadingView.m in Sources */,
+				263829A81E738B93000E2E8A /* JXSettingController.m in Sources */,
 				261E55F91E5986C10062C9EE /* JXHomeStatusResultModel.m in Sources */,
 				261662B01E631B5A00BF4435 /* JXEmotionToolbar.m in Sources */,
 				26CE259C1E10172700A66622 /* JXTitleButton.m in Sources */,
