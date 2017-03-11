@@ -9,6 +9,8 @@
 #import "JXHomeDetailViewController.h"
 #import "JXHomeDetailFrame.h"
 #import "JXHomeStautsDetailView.h"
+#import "JXHomeRetweetFrame.h"
+#import "JXStatus.h"
 
 @interface JXHomeDetailViewController ()
 
@@ -25,6 +27,7 @@
     JXHomeStautsDetailView *detailView = [[JXHomeStautsDetailView alloc] init];
     JXHomeDetailFrame *frame = [[JXHomeDetailFrame alloc] init];
     frame.status = self.status;
+    frame.retweetFrame.retweetStatus.detail = YES;
     detailView.detailFrame = frame;
     detailView.h = frame.detailFrame.size.height; 
     self.tableView.tableHeaderView = detailView;

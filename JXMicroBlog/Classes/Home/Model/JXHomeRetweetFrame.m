@@ -15,6 +15,7 @@
 - (void)setRetweetStatus:(JXStatus *)retweetStatus {
     _retweetStatus = retweetStatus;
     
+    CGFloat h = 0;
     // 正文
     CGFloat contentX = kHomeCellMargin;
     CGFloat contentY = kHomeCellMargin;
@@ -25,30 +26,38 @@
                                                                                       
     CGSize contentRectSize = [retweetStatus.attributeText boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;;
     self.contentFrame = (CGRect){{contentX,contentY},contentRectSize};
+    h = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
     
     // 配图
-    CGFloat toolbarY = 0;
     if (retweetStatus.pic_urls.count) {
         CGFloat photosX = contentX;
         CGFloat photosY = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
         CGSize photosSize = [JXHomeStatusPhotosView sizeWithPhotosCount:retweetStatus.pic_urls.count];
         self.photosFrame =  (CGRect){{photosX,photosY},photosSize};
-        toolbarY = CGRectGetMaxY(self.photosFrame) + kHomeCellMargin;
-    } else {
-        toolbarY = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
+        h = CGRectGetMaxY(self.photosFrame) + kHomeCellMargin;
     }
     
     // 工具条
-    CGFloat toolbarW = kWidth/2;
-    CGFloat toolbarX = kWidth - toolbarW;
-    CGFloat toolbarH = 30;
-    self.toolbarFrame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
+    if (retweetStatus.isDetail) {
+        CGFloat toolbarY = 0;
+        CGFloat toolbarW = kWidth/2;
+        CGFloat toolbarX = kWidth - toolbarW;
+        CGFloat toolbarH = 30;
+        
+        if (retweetStatus.pic_urls.count) {
+            toolbarY = CGRectGetMaxY(self.photosFrame) + kHomeCellMargin;
+        } else {
+            toolbarY = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
+        }
+        self.toolbarFrame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
+        h = CGRectGetMaxY(self.toolbarFrame) + kHomeCellMargin;
+    }
+    
     
     // 自己的frame
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat w = kWidth;
-    CGFloat h = CGRectGetMaxY(self.toolbarFrame) + kHomeCellMargin;
     self.retweetFrame = CGRectMake(x, y, w, h);
 
 }
