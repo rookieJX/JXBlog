@@ -65,6 +65,7 @@
     JXGlobalArrowItem *hotItem = [JXGlobalArrowItem itemWithTitle:@"热门微博" icon:@"hot_status"];
     hotItem.subTitle = @"笑话, 娱乐, 神什么鬼的都在这里";
     hotItem.bageVaule = @"909";
+    hotItem.destVcClass = [UIViewController class];
     
     JXGlobalArrowItem *findItem = [JXGlobalArrowItem itemWithTitle:@"招人" icon:@"find_people"];
     findItem.subTitle = @"你老公老婆都在这里";
@@ -83,7 +84,9 @@
     
     // 设置组的所有行数据
     JXGlobalItem *gameItem = [JXGlobalItem itemWithTitle:@"游戏中心" icon:@"game_center"];
-    
+    gameItem.globalItemOperationBlock = ^(){
+        JXLog(@"点击了游戏");
+    };
     JXGlobalItem *nearItem = [JXGlobalItem itemWithTitle:@"周边" icon:@"near"];
     
     JXGlobalItem *appItem = [JXGlobalItem itemWithTitle:@"应用" icon:@"app"];
@@ -126,6 +129,22 @@
     cell.item = item;
     cell.indexPath = indexPath;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    JXGlobalGroup *group = self.groups[indexPath.section];
+    JXGlobalItem *item = group.items[indexPath.row];
+    
+    // 如果有类
+    if (item.destVcClass) {
+        UIViewController *destVc = [[item.destVcClass alloc] init];
+        [self.navigationController pushViewController:destVc animated:YES];
+    }
+    
+    // 如果实现了block
+    if (item.globalItemOperationBlock) {
+        item.globalItemOperationBlock();
+    }
 }
 
 - (instancetype)init
