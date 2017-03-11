@@ -12,12 +12,15 @@
 #import "JXUserModel.h"
 #import "JXHomeStatusPhotosView.h" // 配图
 #import "JXStatusLabel.h" // 自定义Label
+#import "JXHomeStatusRetweetToolbar.h"
 
 @interface JXHomeStatusRetweetView ()
 /** 内容 */
 @property (nonatomic,weak) JXStatusLabel * contentLabel;
 /** 配图 */
 @property (nonatomic,weak) JXHomeStatusPhotosView * photosView;
+/** 工具条 */
+@property (nonatomic,weak) JXHomeStatusRetweetToolbar * toolbar;
 @end
 
 @implementation JXHomeStatusRetweetView
@@ -38,6 +41,11 @@
         JXHomeStatusPhotosView *photosView = [[JXHomeStatusPhotosView alloc] init];
         [self addSubview:photosView];
         self.photosView = photosView;
+        
+        // 工具条
+        JXHomeStatusRetweetToolbar * toolbar = [[JXHomeStatusRetweetToolbar alloc] init];
+        [self addSubview:toolbar];
+        self.toolbar = toolbar;
     }
     return self;
 }
@@ -58,6 +66,9 @@
     } else {
         self.photosView.hidden = YES;
     }
+    
+    self.toolbar.frame = retweetFrame.toolbarFrame;
+    self.toolbar.status = retweetFrame.retweetStatus;
     
 }
 

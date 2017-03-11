@@ -81,6 +81,8 @@
 		263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A41E73842A000E2E8A /* JXGlobalViewController.m */; };
 		263829A81E738B93000E2E8A /* JXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A71E738B93000E2E8A /* JXSettingController.m */; };
 		263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AD1E738EF5000E2E8A /* JXMeMessageController.m */; };
+		263829B11E73FB21000E2E8A /* JXHomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */; };
+		263829B71E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -269,6 +271,10 @@
 		263829A71E738B93000E2E8A /* JXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSettingController.m; sourceTree = "<group>"; };
 		263829AC1E738EF5000E2E8A /* JXMeMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMeMessageController.h; sourceTree = "<group>"; };
 		263829AD1E738EF5000E2E8A /* JXMeMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMeMessageController.m; sourceTree = "<group>"; };
+		263829AF1E73FB21000E2E8A /* JXHomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeDetailViewController.h; sourceTree = "<group>"; };
+		263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailViewController.m; sourceTree = "<group>"; };
+		263829B51E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusRetweetToolbar.h; sourceTree = "<group>"; };
+		263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusRetweetToolbar.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -465,6 +471,8 @@
 			children = (
 				2606B99D1E00423F00DB56E7 /* JXHomeController.h */,
 				2606B99E1E00423F00DB56E7 /* JXHomeController.m */,
+				263829AF1E73FB21000E2E8A /* JXHomeDetailViewController.h */,
+				263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -685,6 +693,8 @@
 				2616628A1E627CF200BF4435 /* JXHomeStatusPhotoView.m */,
 				263829381E6EF706000E2E8A /* JXStatusLabel.h */,
 				263829391E6EF706000E2E8A /* JXStatusLabel.m */,
+				263829B51E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.h */,
+				263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1115,6 +1125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2616608F1E5B43B500BF4435 /* JXHomeStautsDetailView.m in Sources */,
+				263829B71E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m in Sources */,
 				2606B99C1E00423400DB56E7 /* JXDiscoveryController.m in Sources */,
 				261662A31E62D6D000BF4435 /* SDWebImageManager+MJ.m in Sources */,
 				26166A391E6C428800BF4435 /* RegexKitLite.m in Sources */,
@@ -1152,6 +1163,7 @@
 				261E557C1E57E37C0062C9EE /* JXComposeToolBar.m in Sources */,
 				263216421E48D77200E00F11 /* JXPopView.m in Sources */,
 				261E55FC1E5990BA0062C9EE /* JXComposeTool.m in Sources */,
+				263829B11E73FB21000E2E8A /* JXHomeDetailViewController.m in Sources */,
 				26166A191E68619400BF4435 /* JXEmotionView.m in Sources */,
 				2616622E1E5C8AC900BF4435 /* JXHomeStatusFrame.m in Sources */,
 				2616629F1E62D6D000BF4435 /* MJPhotoLoadingView.m in Sources */,
