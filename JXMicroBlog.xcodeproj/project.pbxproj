@@ -78,6 +78,7 @@
 		2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638299B1E7363A5000E2E8A /* JXGlobalSwitchItem.m */; };
 		2638299F1E736841000E2E8A /* JXGlobalTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638299E1E736841000E2E8A /* JXGlobalTextItem.m */; };
 		263829A21E736DFA000E2E8A /* JXBageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A11E736DFA000E2E8A /* JXBageView.m */; };
+		263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A41E73842A000E2E8A /* JXGlobalViewController.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -260,6 +261,8 @@
 		2638299E1E736841000E2E8A /* JXGlobalTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalTextItem.m; sourceTree = "<group>"; };
 		263829A01E736DFA000E2E8A /* JXBageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBageView.h; sourceTree = "<group>"; };
 		263829A11E736DFA000E2E8A /* JXBageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBageView.m; sourceTree = "<group>"; };
+		263829A31E73842A000E2E8A /* JXGlobalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalViewController.h; sourceTree = "<group>"; };
+		263829A41E73842A000E2E8A /* JXGlobalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalViewController.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -529,6 +532,8 @@
 				2606B9A11E0042CE00DB56E7 /* JXNavigationController.m */,
 				2606B9891E00418A00DB56E7 /* JXTabBarController.h */,
 				2606B98A1E00418A00DB56E7 /* JXTabBarController.m */,
+				263829A31E73842A000E2E8A /* JXGlobalViewController.h */,
+				263829A41E73842A000E2E8A /* JXGlobalViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1117,6 +1122,7 @@
 				267678C11E5350A8000D2492 /* JXPhoto.m in Sources */,
 				261E55F31E589A830062C9EE /* JXShowUserParams.m in Sources */,
 				261E55F01E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m in Sources */,
+				263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */,
 				2606B9A21E0042CE00DB56E7 /* JXNavigationController.m in Sources */,
 				2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */,
 				263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */,
