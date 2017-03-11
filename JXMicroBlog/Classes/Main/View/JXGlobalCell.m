@@ -12,7 +12,6 @@
 #import "JXGlobalSwitchItem.h"
 #import "JXGlobalTextItem.h"
 #import "JXBageView.h"
-#import "JXGlobalLogoutItem.h"
 
 @interface JXGlobalCell ()
 /** 箭头 */
@@ -112,12 +111,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if ([self.item isKindOfClass:[JXGlobalLogoutItem class]]) {
-        self.textLabel.centerX = self.w * 0.5;
-        self.textLabel.centerY = self.h * 0.5;
-    } else {
-        self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 10;
-    }
+    self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 10;
     
     
 }

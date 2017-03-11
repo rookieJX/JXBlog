@@ -80,7 +80,6 @@
 		263829A21E736DFA000E2E8A /* JXBageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A11E736DFA000E2E8A /* JXBageView.m */; };
 		263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A41E73842A000E2E8A /* JXGlobalViewController.m */; };
 		263829A81E738B93000E2E8A /* JXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829A71E738B93000E2E8A /* JXSettingController.m */; };
-		263829AB1E738DF4000E2E8A /* JXGlobalLogoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */; };
 		263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AD1E738EF5000E2E8A /* JXMeMessageController.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
@@ -268,8 +267,6 @@
 		263829A41E73842A000E2E8A /* JXGlobalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalViewController.m; sourceTree = "<group>"; };
 		263829A61E738B93000E2E8A /* JXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSettingController.h; sourceTree = "<group>"; };
 		263829A71E738B93000E2E8A /* JXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSettingController.m; sourceTree = "<group>"; };
-		263829A91E738DF4000E2E8A /* JXGlobalLogoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGlobalLogoutItem.h; sourceTree = "<group>"; };
-		263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGlobalLogoutItem.m; sourceTree = "<group>"; };
 		263829AC1E738EF5000E2E8A /* JXMeMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMeMessageController.h; sourceTree = "<group>"; };
 		263829AD1E738EF5000E2E8A /* JXMeMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMeMessageController.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
@@ -766,8 +763,6 @@
 				2638299B1E7363A5000E2E8A /* JXGlobalSwitchItem.m */,
 				2638299D1E736841000E2E8A /* JXGlobalTextItem.h */,
 				2638299E1E736841000E2E8A /* JXGlobalTextItem.m */,
-				263829A91E738DF4000E2E8A /* JXGlobalLogoutItem.h */,
-				263829AA1E738DF4000E2E8A /* JXGlobalLogoutItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1159,7 +1154,6 @@
 				261E55FC1E5990BA0062C9EE /* JXComposeTool.m in Sources */,
 				26166A191E68619400BF4435 /* JXEmotionView.m in Sources */,
 				2616622E1E5C8AC900BF4435 /* JXHomeStatusFrame.m in Sources */,
-				263829AB1E738DF4000E2E8A /* JXGlobalLogoutItem.m in Sources */,
 				2616629F1E62D6D000BF4435 /* MJPhotoLoadingView.m in Sources */,
 				263829A81E738B93000E2E8A /* JXSettingController.m in Sources */,
 				261E55F91E5986C10062C9EE /* JXHomeStatusResultModel.m in Sources */,

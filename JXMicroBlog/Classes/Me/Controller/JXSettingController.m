@@ -12,7 +12,6 @@
 #import "JXGlobalSwitchItem.h"
 #import "JXGlobalArrowItem.h"
 #import "JXGlobalTextItem.h"
-#import "JXGlobalLogoutItem.h"
 #import "JXMeMessageController.h"
 
 @implementation JXSettingController
@@ -26,8 +25,21 @@
     [self setupGroup0];
     [self setupGroup1];
     [self setupGroup2];
-    [self setupGroup3];
     
+    // 设置退出按钮
+    [self setupFooter];
+    
+}
+
+- (void)setupFooter {
+    UIButton *logout =[UIButton buttonWithType:UIButtonTypeCustom];
+    [logout setTitle:@"退出当前登录" forState:UIControlStateNormal];
+    logout.titleLabel.font = [UIFont systemFontOfSize:15];
+    [logout setTitleColor:kRGBColor(255, 10, 0, 1.0) forState:UIControlStateNormal];
+    [logout setBackgroundImage:[UIImage resizedImage:@"common_card_background"] forState:UIControlStateNormal];
+    [logout setBackgroundImage:[UIImage resizedImage:@"common_card_background_highlighted"] forState:UIControlStateHighlighted];
+    logout.h = 35;
+    self.tableView.tableFooterView = logout;
 }
 
 - (void)setupGroup0 {
@@ -77,15 +89,7 @@
 
 }
 
-- (void)setupGroup3 {
-    JXGlobalGroup *group = [JXGlobalGroup group];
-    [self.groups addObject:group];
-    
-    // 设置组的所有行数据
-    JXGlobalLogoutItem *logout = [JXGlobalLogoutItem itemWithTitle:@"退出登录"];
-    group.items = @[logout];
-    
-}
+
 
 
 @end
