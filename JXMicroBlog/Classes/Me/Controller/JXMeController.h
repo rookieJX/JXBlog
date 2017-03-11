@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JXMeController : UIViewController
+@interface JXMeController : UITableViewController
 
 @end
