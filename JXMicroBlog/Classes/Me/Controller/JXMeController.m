@@ -14,6 +14,7 @@
 #import "JXGlobalSwitchItem.h"
 #import "JXGlobalArrowItem.h"
 #import "JXGlobalTextItem.h"
+#import "JXSettingController.h"
 
 @interface JXMeController ()
 /** 数组 */
@@ -37,8 +38,15 @@
     self.tableView.sectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 10;
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"设置" style:UIBarButtonItemStyleDone target:self action:@selector(profile)];
+    
     // 初始化数据模型
     [self setupGroups];
+}
+
+- (void)profile {
+    JXSettingController *setting = [[JXSettingController alloc] init];
+    [self.navigationController pushViewController:setting animated:YES];
 }
 - (void)setupGroups {
     [self setupGroup0];

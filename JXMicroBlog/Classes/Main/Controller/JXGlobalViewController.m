@@ -35,6 +35,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 10;
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -62,6 +63,7 @@
     // 如果有类
     if (item.destVcClass) {
         UIViewController *destVc = [[item.destVcClass alloc] init];
+        destVc.title = item.title;
         [self.navigationController pushViewController:destVc animated:YES];
     }
     
@@ -69,6 +71,16 @@
     if (item.globalItemOperationBlock) {
         item.globalItemOperationBlock();
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    JXGlobalGroup *group = self.groups[section];
+    return group.header;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    JXGlobalGroup *group = self.groups[section];
+    return group.footer;
 }
 
 - (instancetype)init
