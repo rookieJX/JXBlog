@@ -17,6 +17,8 @@
 @property (nonatomic,copy) NSString * icon;
 /** 数字 */
 @property (nonatomic,copy) NSString * bageVaule;
+/** 目标控制器 */
+@property (nonatomic,assign) Class destVcClass;
 + (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon;
 + (instancetype)itemWithTitle:(NSString *)title;
 @end
