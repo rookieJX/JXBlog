@@ -15,15 +15,6 @@
 - (void)setRetweetStatus:(JXStatus *)retweetStatus {
     _retweetStatus = retweetStatus;
     
-    // 昵称
-//    CGFloat nameX = kHomeCellMargin;
-//    CGFloat nameY = kHomeCellMargin;
-//    NSMutableDictionary *nameDict = [NSMutableDictionary dictionary];
-//    nameDict[NSFontAttributeName] = kHomeRetweetNameFont;
-//    NSString *name = [NSString stringWithFormat:@"@%@",retweetStatus.user.name];
-//    CGSize nameSize = [name sizeWithAttributes:nameDict];
-//    self.nameFrame = (CGRect){{nameX,nameY},nameSize};
-
     // 正文
     CGFloat contentX = kHomeCellMargin;
     CGFloat contentY = kHomeCellMargin;
@@ -36,21 +27,28 @@
     self.contentFrame = (CGRect){{contentX,contentY},contentRectSize};
     
     // 配图
-    CGFloat h = 0;
+    CGFloat toolbarY = 0;
     if (retweetStatus.pic_urls.count) {
         CGFloat photosX = contentX;
         CGFloat photosY = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
         CGSize photosSize = [JXHomeStatusPhotosView sizeWithPhotosCount:retweetStatus.pic_urls.count];
         self.photosFrame =  (CGRect){{photosX,photosY},photosSize};
-        h = CGRectGetMaxY(self.photosFrame) + kHomeCellMargin;
+        toolbarY = CGRectGetMaxY(self.photosFrame) + kHomeCellMargin;
     } else {
-        h = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
+        toolbarY = CGRectGetMaxY(self.contentFrame) + kHomeCellMargin;
     }
+    
+    // 工具条
+    CGFloat toolbarW = kWidth/2;
+    CGFloat toolbarX = kWidth - toolbarW;
+    CGFloat toolbarH = 30;
+    self.toolbarFrame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
     
     // 自己的frame
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat w = kWidth;
+    CGFloat h = CGRectGetMaxY(self.toolbarFrame) + kHomeCellMargin;
     self.retweetFrame = CGRectMake(x, y, w, h);
 
 }

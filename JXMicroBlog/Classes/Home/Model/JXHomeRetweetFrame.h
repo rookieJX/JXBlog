@@ -16,6 +16,8 @@
 @property (nonatomic,assign) CGRect contentFrame;
 /** 配图 */
 @property (nonatomic,assign) CGRect photosFrame;
+/** 工具条 */
+@property (nonatomic,assign) CGRect toolbarFrame;
 
 /** 转发微博frame */
 @property (nonatomic,assign) CGRect retweetFrame;

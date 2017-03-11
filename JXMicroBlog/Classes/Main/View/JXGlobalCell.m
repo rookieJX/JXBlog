@@ -112,13 +112,8 @@
     [super layoutSubviews];
     
     self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 10;
-}
-
-- (void)setFrame:(CGRect)frame {
     
-    frame.origin.y -= 25;
     
-    [super setFrame:frame];
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath totalRowsInSection:(NSInteger)totalRows{

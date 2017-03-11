@@ -16,6 +16,7 @@
 #import "JXStatusTool.h" // 加载首页信息
 #import "JXStatus.h"
 #import "JXHomeStatusCell.h"
+#import "JXHomeDetailViewController.h"
 
 @interface JXHomeController ()<UITableViewDelegate,UITableViewDataSource,JXHomeStatusCellDelegate>
 
@@ -35,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupNavigation];
     
@@ -304,6 +304,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    JXHomeStatusFrame *frame = self.statusFrameArray[indexPath.row];
+    JXHomeDetailViewController *detailController = [[JXHomeDetailViewController alloc] init];
+    detailController.status = frame.stauts;
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark - 点击celltoolbar

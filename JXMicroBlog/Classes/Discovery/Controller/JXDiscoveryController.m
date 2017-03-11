@@ -16,27 +16,15 @@
 #import "JXGlobalTextItem.h"
 
 @interface JXDiscoveryController ()
-/** 数组 */
-@property (nonatomic,strong) NSMutableArray * groups;
+
 @end
 
 @implementation JXDiscoveryController
 
-- (NSMutableArray *)groups{
-    if (_groups == nil) {
-        _groups = [NSMutableArray array];
-    }
-    return _groups;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = kRGBColor(211, 211, 211, 1.0);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.sectionFooterHeight = 0;
-    self.tableView.sectionHeaderHeight = 10;
-    
     // 搜索框
     JXTextField *textField = [JXTextField createSearch];
     textField.w = kWidth;
@@ -113,43 +101,5 @@
     group.items = @[videoItem,musicItem,movieItem,castItem,moreItem];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    JXGlobalGroup *group = self.groups[section];
-    return group.items.count;
-}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.groups.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    JXGlobalCell *cell = [JXGlobalCell cellWithTableView:tableView];
-    JXGlobalGroup *group = self.groups[indexPath.section];
-    JXGlobalItem *item = group.items[indexPath.row];
-    cell.item = item;
-    cell.indexPath = indexPath;
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    JXGlobalGroup *group = self.groups[indexPath.section];
-    JXGlobalItem *item = group.items[indexPath.row];
-    
-    // 如果有类
-    if (item.destVcClass) {
-        UIViewController *destVc = [[item.destVcClass alloc] init];
-        [self.navigationController pushViewController:destVc animated:YES];
-    }
-    
-    // 如果实现了block
-    if (item.globalItemOperationBlock) {
-        item.globalItemOperationBlock();
-    }
-}
-
-- (instancetype)init
-{
-    
-    return [self initWithStyle:UITableViewStyleGrouped];
-}
 @end
