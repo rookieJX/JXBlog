@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface JXGlobalItem : NSObject
 /** 标题 */
 @property (nonatomic,copy) NSString * title;
@@ -19,6 +20,9 @@
 @property (nonatomic,copy) NSString * bageVaule;
 /** 目标控制器 */
 @property (nonatomic,assign) Class destVcClass;
+/** 处理点击事件 */
+@property (nonatomic,copy) void(^globalItemOperationBlock)();
+
 + (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon;
 + (instancetype)itemWithTitle:(NSString *)title;
 @end

@@ -84,7 +84,9 @@
     
     // 设置组的所有行数据
     JXGlobalItem *gameItem = [JXGlobalItem itemWithTitle:@"游戏中心" icon:@"game_center"];
-    
+    gameItem.globalItemOperationBlock = ^(){
+        JXLog(@"点击了游戏");
+    };
     JXGlobalItem *nearItem = [JXGlobalItem itemWithTitle:@"周边" icon:@"near"];
     
     JXGlobalItem *appItem = [JXGlobalItem itemWithTitle:@"应用" icon:@"app"];
@@ -137,6 +139,11 @@
     if (item.destVcClass) {
         UIViewController *destVc = [[item.destVcClass alloc] init];
         [self.navigationController pushViewController:destVc animated:YES];
+    }
+    
+    // 如果实现了block
+    if (item.globalItemOperationBlock) {
+        item.globalItemOperationBlock();
     }
 }
 
