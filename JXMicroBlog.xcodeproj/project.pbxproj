@@ -83,6 +83,10 @@
 		263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AD1E738EF5000E2E8A /* JXMeMessageController.m */; };
 		263829B11E73FB21000E2E8A /* JXHomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */; };
 		263829B71E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */; };
+		263829BA1E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */; };
+		263829BD1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */; };
+		263829C21E74DFF9000E2E8A /* JXHomeStatusDetailParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */; };
+		263829C51E74E28E000E2E8A /* JXHomeStatusDetailResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -275,6 +279,14 @@
 		263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailViewController.m; sourceTree = "<group>"; };
 		263829B51E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusRetweetToolbar.h; sourceTree = "<group>"; };
 		263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusRetweetToolbar.m; sourceTree = "<group>"; };
+		263829B81E743A4A000E2E8A /* JXHomeDetailBottomToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeDetailBottomToolbar.h; sourceTree = "<group>"; };
+		263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailBottomToolbar.m; sourceTree = "<group>"; };
+		263829BB1E744FDB000E2E8A /* JXHomeDetailTopToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeDetailTopToolbar.h; sourceTree = "<group>"; };
+		263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailTopToolbar.m; sourceTree = "<group>"; };
+		263829C01E74DFF9000E2E8A /* JXHomeStatusDetailParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusDetailParams.h; sourceTree = "<group>"; };
+		263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusDetailParams.m; sourceTree = "<group>"; };
+		263829C31E74E28E000E2E8A /* JXHomeStatusDetailResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusDetailResult.h; sourceTree = "<group>"; };
+		263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusDetailResult.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -508,6 +520,10 @@
 				261662331E5C8B3000BF4435 /* JXHomeRetweetFrame.m */,
 				263829871E703F32000E2E8A /* JXLinkModel.h */,
 				263829881E703F32000E2E8A /* JXLinkModel.m */,
+				263829C01E74DFF9000E2E8A /* JXHomeStatusDetailParams.h */,
+				263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */,
+				263829C31E74E28E000E2E8A /* JXHomeStatusDetailResult.h */,
+				263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,6 +536,10 @@
 				26CE259B1E10172700A66622 /* JXTitleButton.m */,
 				263216401E48D77200E00F11 /* JXPopView.h */,
 				263216411E48D77200E00F11 /* JXPopView.m */,
+				263829B81E743A4A000E2E8A /* JXHomeDetailBottomToolbar.h */,
+				263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */,
+				263829BB1E744FDB000E2E8A /* JXHomeDetailTopToolbar.h */,
+				263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1145,6 +1165,7 @@
 				261E55F31E589A830062C9EE /* JXShowUserParams.m in Sources */,
 				261E55F01E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m in Sources */,
 				263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */,
+				263829C51E74E28E000E2E8A /* JXHomeStatusDetailResult.m in Sources */,
 				2606B9A21E0042CE00DB56E7 /* JXNavigationController.m in Sources */,
 				2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */,
 				263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */,
@@ -1198,8 +1219,10 @@
 				26B77FE11E508AC8008B5641 /* JXOAuthController.m in Sources */,
 				261662AD1E63156D00BF4435 /* JXEmotionListView.m in Sources */,
 				2606B98B1E00418A00DB56E7 /* JXTabBarController.m in Sources */,
+				263829BD1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m in Sources */,
 				26B77FEE1E509561008B5641 /* MBProgressHUD.m in Sources */,
 				2616629C1E62D6D000BF4435 /* MJPhoto.m in Sources */,
+				263829BA1E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m in Sources */,
 				2606B9071DFEF41300DB56E7 /* UIView+JXExtension.m in Sources */,
 				26166A0B1E67065600BF4435 /* JXEmotionGridView.m in Sources */,
 				26588CA31E4CB0CA00AEE4BC /* JXNewFeatureCell.m in Sources */,
@@ -1209,6 +1232,7 @@
 				26DB7E961E59DED80057ACDC /* JXHomeUnreadeCountParam.m in Sources */,
 				2632164B1E4A15F500E00F11 /* JXTabBar.m in Sources */,
 				26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */,
+				263829C21E74DFF9000E2E8A /* JXHomeStatusDetailParams.m in Sources */,
 				261662881E627CCF00BF4435 /* JXHomeStatusPhotosView.m in Sources */,
 				261662411E5DD15600BF4435 /* JXHomeDetailFrame.m in Sources */,
 			);

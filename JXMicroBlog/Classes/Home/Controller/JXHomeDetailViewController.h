@@ -10,7 +10,7 @@
 
 @class JXStatus;
 
-@interface JXHomeDetailViewController : UITableViewController
+@interface JXHomeDetailViewController : UIViewController
 /** 微博数据 */
 @property (nonatomic,strong) JXStatus * status;
 @end
