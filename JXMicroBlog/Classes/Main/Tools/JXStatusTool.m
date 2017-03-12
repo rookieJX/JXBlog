@@ -51,4 +51,19 @@
         }
     }];
 }
+
++ (void)detailCountWithParams:(JXHomeStatusDetailParams *)params success:(void (^)(JXHomeStatusDetailResult *))success failure:(void (^)(NSError *))failure {
+    
+    [JXHTTPTool GET:kHomeDetailUrl params:params.mj_keyValues progress:nil success:^(NSDictionary * responseObj) {
+        JXHomeStatusDetailResult *detail = [JXHomeStatusDetailResult mj_objectWithKeyValues:responseObj];
+        if (success) {
+            success(detail);
+        }
+        
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 @end

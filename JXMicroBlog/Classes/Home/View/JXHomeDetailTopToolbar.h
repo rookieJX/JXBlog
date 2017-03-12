@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JXHomeDetailTopToolbar : UIView
+typedef NS_ENUM(NSUInteger, JXHomeDetailTopToolbarType) {
+    JXHomeDetailTopToolbarComent = 1000,
+    JXHomeDetailTopToolbarForward,
+    JXHomeDetailTopToolbarPraise
+};
 
+@class JXHomeDetailTopToolbar,JXStatus;
+
+@protocol JXHomeDetailTopToolbarDelegate <NSObject>
+
+@optional
+- (void)topToolbar:(JXHomeDetailTopToolbar *)toolbar didClickButtonType:(JXHomeDetailTopToolbarType)type;
+
+@end
+
+@interface JXHomeDetailTopToolbar : UIView
+/** 代理 */
+@property (nonatomic,weak) id<JXHomeDetailTopToolbarDelegate> delegate;
+/** 微博 */
+@property (nonatomic,strong) JXStatus * status;
 @end
