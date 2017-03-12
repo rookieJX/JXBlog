@@ -149,9 +149,10 @@
     detailParams.since_id = result.idstr;
     
     
-    [JXStatusTool detailCountWithParams:detailParams success:^(JXHomeStatusDetailResult *homeStatus) {
-        NSIndexSet *index = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, homeStatus.comments.count)];
-        [self.comments insertObjects:homeStatus.comments atIndexes:index];
+    [JXStatusTool detailCountWithParams:detailParams success:^(JXHomeStatusDetailResult *result) {
+//        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.comments.count)];
+//        [self.comments insertObjects:result.comments atIndexes:set];
+        [self.comments addObjectsFromArray:result.comments];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         
