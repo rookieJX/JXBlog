@@ -13,6 +13,7 @@
 #import "JXHomeStatusPhotosView.h" // 配图
 #import "JXStatusLabel.h" // 自定义Label
 #import "JXHomeStatusRetweetToolbar.h"
+#import "JXHomeDetailViewController.h" // 详细微博
 
 @interface JXHomeStatusRetweetView ()
 /** 内容 */
@@ -46,9 +47,25 @@
         JXHomeStatusRetweetToolbar * toolbar = [[JXHomeStatusRetweetToolbar alloc] init];
         [self addSubview:toolbar];
         self.toolbar = toolbar;
+        
+        // 添加手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
+        [self addGestureRecognizer:tap];
     }
     return self;
 }
+
+
+// 点击跳转到微博
+- (void)tapClick {
+    UITabBarController *tabVc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav = (UINavigationController *)tabVc.selectedViewController;
+    // 跳转到详细微博
+    JXHomeDetailViewController *detail = [[JXHomeDetailViewController alloc] init];
+    detail.status = self.retweetFrame.retweetStatus;
+    [nav pushViewController:detail animated:YES];
+}
+
 
 - (void)setRetweetFrame:(JXHomeRetweetFrame *)retweetFrame {
     _retweetFrame = retweetFrame;

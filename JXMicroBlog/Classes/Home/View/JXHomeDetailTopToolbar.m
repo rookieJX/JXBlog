@@ -27,7 +27,6 @@
     if (self) {
         self.repostsBtn = [self setupBtnWithIcon:@"timeline_icon_retweet" title:@"转发" type:JXHomeDetailTopToolbarForward];
         self.commentButton = [self setupBtnWithIcon:@"timeline_icon_comment" title:@"评论" type:JXHomeDetailTopToolbarComent];
-        self.commentButton.selected = YES;
         self.attibuteBtn = [self setupBtnWithIcon:@"timeline_icon_unlike" title:@"赞" type:JXHomeDetailTopToolbarPraise];
     }
     return self;
