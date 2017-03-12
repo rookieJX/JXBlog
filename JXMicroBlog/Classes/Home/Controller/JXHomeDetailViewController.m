@@ -11,9 +11,14 @@
 #import "JXHomeStautsDetailView.h"
 #import "JXHomeRetweetFrame.h"
 #import "JXStatus.h"
+#import "JXHomeDetailBottomToolbar.h"
+#import "JXHomeDetailTopToolbar.h"
 
-@interface JXHomeDetailViewController ()
-
+@interface JXHomeDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+/** 列表 */
+@property (nonatomic,strong) UITableView * tableView;
+/** 底部按钮 */
+@property (nonatomic,weak) JXHomeDetailBottomToolbar *toolbar;
 @end
 
 @implementation JXHomeDetailViewController
@@ -21,85 +26,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = kRGBColor(211, 211, 211, 1.0);
+    // 创建tableView
+    [self setupTableView];
+    
+    // 创建详细视图
+    [self setupDetailView];
+    
+    // 创建底部toolbar
+    [self setupDetailToolbar];
+    
+}
+
+// 创建底部toolbar
+- (void)setupDetailToolbar {
+    JXHomeDetailBottomToolbar *toolbar = [[JXHomeDetailBottomToolbar alloc] init];
+    toolbar.y = CGRectGetMaxY(self.tableView.frame);
+    toolbar.w = self.view.w;
+    toolbar.h = 44;
+    [self.view addSubview:toolbar];
+    self.toolbar = toolbar;
+
+}
+
+// 创建tableView
+- (void)setupTableView {
+    UITableView *tableView =[[UITableView alloc] init];
+    tableView.w = kWidth;
+    tableView.h = self.view.h - 44-20-44;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.backgroundColor = kRGBColor(211, 211, 211, 1.0);
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+}
+
+// 创建详细
+- (void)setupDetailView {
     self.title = @"微博正文  ";
     
     JXHomeStautsDetailView *detailView = [[JXHomeStautsDetailView alloc] init];
     JXHomeDetailFrame *frame = [[JXHomeDetailFrame alloc] init];
+    self.status.retweeted_status.detail = YES;
     frame.status = self.status;
-    frame.retweetFrame.retweetStatus.detail = YES;
     detailView.detailFrame = frame;
-    detailView.h = frame.detailFrame.size.height; 
+    detailView.h = frame.detailFrame.size.height;
     self.tableView.tableHeaderView = detailView;
-    
 }
-
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 100;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *identifier = @"reusecell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    JXHomeDetailTopToolbar *toolbar = [[JXHomeDetailTopToolbar alloc] init];
+    return toolbar;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
