@@ -67,8 +67,13 @@
         self.photosView.hidden = YES;
     }
     
-    self.toolbar.frame = retweetFrame.toolbarFrame;
-    self.toolbar.status = retweetFrame.retweetStatus;
+    if (retweetFrame.retweetStatus.isDetail) {
+        self.toolbar.hidden = NO; 
+        self.toolbar.frame = retweetFrame.toolbarFrame;
+        self.toolbar.status = retweetFrame.retweetStatus;
+    } else {
+        self.toolbar.hidden = YES;
+    }
     
 }
 
