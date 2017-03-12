@@ -161,4 +161,12 @@
     }
 }
 
+
+// 如果事件为连接那么自己处理,否则不处理
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if ([self touchingLinkWithPoint:point]) {
+        return self;
+    }
+    return nil;
+}
 @end

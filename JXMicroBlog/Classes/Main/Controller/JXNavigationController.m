@@ -20,7 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    // 设置导航栏代理,主要功能是当我们滑动的时候可以回到上层,但是当我们自定义
+    // 导航栏,这个代理就会有值,有值就会失效
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 /**

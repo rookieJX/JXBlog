@@ -26,6 +26,8 @@
 {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+    // 真机调试
+    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     // 获得微博发布的具体时间
     NSDate *createDate = [fmt dateFromString:_created_at];
     
