@@ -64,6 +64,7 @@
 		26196C941E76DABD00D4D087 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C8D1E76DABD00D4D087 /* FMDatabaseQueue.m */; };
 		26196C951E76DABD00D4D087 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C901E76DABD00D4D087 /* FMResultSet.m */; };
 		26196C971E76DB0700D4D087 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26196C961E76DB0700D4D087 /* libsqlite3.tbd */; };
+		26196C9D1E783C5200D4D087 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C9C1E783C5200D4D087 /* NSString+File.m */; };
 		261E55761E55F40B0062C9EE /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55751E55F40B0062C9EE /* JXTextView.m */; };
 		261E557C1E57E37C0062C9EE /* JXComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E557B1E57E37C0062C9EE /* JXComposeToolBar.m */; };
 		261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55EC1E58801D0062C9EE /* JXComposePhotoView.m */; };
@@ -247,6 +248,8 @@
 		26196C8F1E76DABD00D4D087 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		26196C901E76DABD00D4D087 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		26196C961E76DB0700D4D087 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		26196C9B1E783C5200D4D087 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
+		26196C9C1E783C5200D4D087 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		261E55741E55F40B0062C9EE /* JXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextView.h; sourceTree = "<group>"; };
 		261E55751E55F40B0062C9EE /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		261E557A1E57E37C0062C9EE /* JXComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXComposeToolBar.h; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 		2606B8FE1DFEF41300DB56E7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				26196C9B1E783C5200D4D087 /* NSString+File.h */,
+				26196C9C1E783C5200D4D087 /* NSString+File.m */,
 				26166A0C1E671BE700BF4435 /* NSString+Emoji.h */,
 				26166A0D1E671BE700BF4435 /* NSString+Emoji.m */,
 				261662421E5E73C200BF4435 /* NSDate+MJ.h */,
@@ -1245,6 +1250,7 @@
 				261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */,
 				263829A21E736DFA000E2E8A /* JXBageView.m in Sources */,
 				267678B61E533D6C000D2492 /* JXHomeParams.m in Sources */,
+				26196C9D1E783C5200D4D087 /* NSString+File.m in Sources */,
 				260A85E61E01A68900B30406 /* JXTextField.m in Sources */,
 				2638299F1E736841000E2E8A /* JXGlobalTextItem.m in Sources */,
 				26196C931E76DABD00D4D087 /* FMDatabasePool.m in Sources */,
