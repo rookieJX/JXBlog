@@ -42,5 +42,7 @@
 
 /** 判断是否是转发微博 */
 @property (nonatomic,assign,getter=isRetweeted) BOOL retweeted;
+/** 是否是详细的转发微博 */
+@property (nonatomic,assign,getter=isDetail) BOOL detail;
 
 @end

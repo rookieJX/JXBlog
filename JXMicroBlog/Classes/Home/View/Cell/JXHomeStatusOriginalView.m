@@ -103,7 +103,16 @@
         [self.nameButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
-    self.contentLabel.attributedText = originalFrame.originalStatus.attributeText;
+    // 内容
+    if (originalFrame.originalStatus.isRetweeted) {
+        NSMutableAttributedString *attir = [[NSMutableAttributedString alloc] initWithAttributedString:originalFrame.originalStatus.attributeText];
+        NSInteger len = originalFrame.originalStatus.user.name.length + 4;
+        [attir deleteCharactersInRange:NSMakeRange(0, len)];
+        self.contentLabel.attributedText = attir;
+    } else {
+        self.contentLabel.attributedText = originalFrame.originalStatus.attributeText;
+    }
+    
     self.contentLabel.frame = originalFrame.contentFrame;
     
     self.timeLabel.text = originalFrame.originalStatus.created_at;

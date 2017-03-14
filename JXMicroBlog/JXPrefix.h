@@ -88,7 +88,8 @@
 #define kHomeShowUserUrl @"https://api.weibo.com/2/users/show.json"
 // 未读消息个数
 #define kUnreadeCountUrl @"https://rm.api.weibo.com/2/remind/unread_count.json"
-
+// 获取首页详细评论
+#define kHomeDetailUrl @"https://api.weibo.com/2/comments/show.json"
 // cell表格参数
 // cell内边距
 #define kHomeCellMargin 10

@@ -46,7 +46,16 @@
     CGFloat contentMaxW = kWidth - 2 * contentX;
     CGSize contenSize = CGSizeMake(contentMaxW, MAXFLOAT);
     
-    CGSize contentRectSize = [originalStatus.attributeText boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    // 内容
+    // 这里是因为当我们点击转发微博,进入转发微博主页的时候,会显示 @昵称,需要删除
+    NSMutableAttributedString *attir = [[NSMutableAttributedString alloc] initWithAttributedString:originalStatus.attributeText];
+    if (originalStatus.isRetweeted) {
+        
+        NSInteger len = originalStatus.user.name.length + 4;
+        [attir deleteCharactersInRange:NSMakeRange(0, len)];
+    }
+    
+    CGSize contentRectSize = [attir boundingRectWithSize:contenSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.contentFrame = (CGRect){{contentX,contentY},contentRectSize};
     
     // 配图

@@ -58,6 +58,13 @@
 		26166A3B1E6C42C200BF4435 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26166A3A1E6C42C200BF4435 /* libicucore.tbd */; };
 		26166A3E1E6C569900BF4435 /* JXEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A3D1E6C569900BF4435 /* JXEmotionAttachment.m */; };
 		26166A411E6C60AA00BF4435 /* JXRegexReult.m in Sources */ = {isa = PBXBuildFile; fileRef = 26166A401E6C60AA00BF4435 /* JXRegexReult.m */; };
+		26196C911E76DABD00D4D087 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C871E76DABD00D4D087 /* FMDatabase.m */; };
+		26196C921E76DABD00D4D087 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C891E76DABD00D4D087 /* FMDatabaseAdditions.m */; };
+		26196C931E76DABD00D4D087 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C8B1E76DABD00D4D087 /* FMDatabasePool.m */; };
+		26196C941E76DABD00D4D087 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C8D1E76DABD00D4D087 /* FMDatabaseQueue.m */; };
+		26196C951E76DABD00D4D087 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C901E76DABD00D4D087 /* FMResultSet.m */; };
+		26196C971E76DB0700D4D087 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26196C961E76DB0700D4D087 /* libsqlite3.tbd */; };
+		26196C9D1E783C5200D4D087 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 26196C9C1E783C5200D4D087 /* NSString+File.m */; };
 		261E55761E55F40B0062C9EE /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55751E55F40B0062C9EE /* JXTextView.m */; };
 		261E557C1E57E37C0062C9EE /* JXComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E557B1E57E37C0062C9EE /* JXComposeToolBar.m */; };
 		261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E55EC1E58801D0062C9EE /* JXComposePhotoView.m */; };
@@ -83,6 +90,10 @@
 		263829AE1E738EF5000E2E8A /* JXMeMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829AD1E738EF5000E2E8A /* JXMeMessageController.m */; };
 		263829B11E73FB21000E2E8A /* JXHomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */; };
 		263829B71E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */; };
+		263829BA1E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */; };
+		263829BD1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */; };
+		263829C21E74DFF9000E2E8A /* JXHomeStatusDetailParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */; };
+		263829C51E74E28E000E2E8A /* JXHomeStatusDetailResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */; };
 		26588C961E4CAC9A00AEE4BC /* JXSendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */; };
 		26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C991E4CAFA100AEE4BC /* JXChooseControllerTool.m */; };
 		26588C9F1E4CB01000AEE4BC /* JXNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26588C9E1E4CB01000AEE4BC /* JXNewFeatureController.m */; };
@@ -225,6 +236,20 @@
 		26166A3D1E6C569900BF4435 /* JXEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXEmotionAttachment.m; sourceTree = "<group>"; };
 		26166A3F1E6C60AA00BF4435 /* JXRegexReult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXRegexReult.h; sourceTree = "<group>"; };
 		26166A401E6C60AA00BF4435 /* JXRegexReult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXRegexReult.m; sourceTree = "<group>"; };
+		26196C861E76DABD00D4D087 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		26196C871E76DABD00D4D087 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		26196C881E76DABD00D4D087 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		26196C891E76DABD00D4D087 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		26196C8A1E76DABD00D4D087 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		26196C8B1E76DABD00D4D087 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		26196C8C1E76DABD00D4D087 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		26196C8D1E76DABD00D4D087 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		26196C8E1E76DABD00D4D087 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		26196C8F1E76DABD00D4D087 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		26196C901E76DABD00D4D087 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		26196C961E76DB0700D4D087 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		26196C9B1E783C5200D4D087 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
+		26196C9C1E783C5200D4D087 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		261E55741E55F40B0062C9EE /* JXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextView.h; sourceTree = "<group>"; };
 		261E55751E55F40B0062C9EE /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		261E557A1E57E37C0062C9EE /* JXComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXComposeToolBar.h; sourceTree = "<group>"; };
@@ -275,6 +300,14 @@
 		263829B01E73FB21000E2E8A /* JXHomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailViewController.m; sourceTree = "<group>"; };
 		263829B51E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusRetweetToolbar.h; sourceTree = "<group>"; };
 		263829B61E7403FA000E2E8A /* JXHomeStatusRetweetToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusRetweetToolbar.m; sourceTree = "<group>"; };
+		263829B81E743A4A000E2E8A /* JXHomeDetailBottomToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeDetailBottomToolbar.h; sourceTree = "<group>"; };
+		263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailBottomToolbar.m; sourceTree = "<group>"; };
+		263829BB1E744FDB000E2E8A /* JXHomeDetailTopToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeDetailTopToolbar.h; sourceTree = "<group>"; };
+		263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeDetailTopToolbar.m; sourceTree = "<group>"; };
+		263829C01E74DFF9000E2E8A /* JXHomeStatusDetailParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusDetailParams.h; sourceTree = "<group>"; };
+		263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusDetailParams.m; sourceTree = "<group>"; };
+		263829C31E74E28E000E2E8A /* JXHomeStatusDetailResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXHomeStatusDetailResult.h; sourceTree = "<group>"; };
+		263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHomeStatusDetailResult.m; sourceTree = "<group>"; };
 		26588C941E4CAC9A00AEE4BC /* JXSendStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSendStatusViewController.h; sourceTree = "<group>"; };
 		26588C951E4CAC9A00AEE4BC /* JXSendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSendStatusViewController.m; sourceTree = "<group>"; };
 		26588C981E4CAFA100AEE4BC /* JXChooseControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXChooseControllerTool.h; sourceTree = "<group>"; };
@@ -323,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26196C971E76DB0700D4D087 /* libsqlite3.tbd in Frameworks */,
 				263828F81E6DB7CC000E2E8A /* Foundation.framework in Frameworks */,
 				26166A3B1E6C42C200BF4435 /* libicucore.tbd in Frameworks */,
 				798413EC647613774A9E0D2E /* libPods-JXMicroBlog.a in Frameworks */,
@@ -508,6 +542,10 @@
 				261662331E5C8B3000BF4435 /* JXHomeRetweetFrame.m */,
 				263829871E703F32000E2E8A /* JXLinkModel.h */,
 				263829881E703F32000E2E8A /* JXLinkModel.m */,
+				263829C01E74DFF9000E2E8A /* JXHomeStatusDetailParams.h */,
+				263829C11E74DFF9000E2E8A /* JXHomeStatusDetailParams.m */,
+				263829C31E74E28E000E2E8A /* JXHomeStatusDetailResult.h */,
+				263829C41E74E28E000E2E8A /* JXHomeStatusDetailResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,6 +558,10 @@
 				26CE259B1E10172700A66622 /* JXTitleButton.m */,
 				263216401E48D77200E00F11 /* JXPopView.h */,
 				263216411E48D77200E00F11 /* JXPopView.m */,
+				263829B81E743A4A000E2E8A /* JXHomeDetailBottomToolbar.h */,
+				263829B91E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m */,
+				263829BB1E744FDB000E2E8A /* JXHomeDetailTopToolbar.h */,
+				263829BC1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -555,6 +597,7 @@
 		2606B8F81DFEF3FA00DB56E7 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				26196C851E76DABD00D4D087 /* fmdb */,
 				26166A361E6C428800BF4435 /* RegexKitLite */,
 				2616628C1E62D6D000BF4435 /* MJPhotoBrowser */,
 				267678B71E533FF1000D2492 /* Foundation+Log.m */,
@@ -590,6 +633,8 @@
 		2606B8FE1DFEF41300DB56E7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				26196C9B1E783C5200D4D087 /* NSString+File.h */,
+				26196C9C1E783C5200D4D087 /* NSString+File.m */,
 				26166A0C1E671BE700BF4435 /* NSString+Emoji.h */,
 				26166A0D1E671BE700BF4435 /* NSString+Emoji.m */,
 				261662421E5E73C200BF4435 /* NSDate+MJ.h */,
@@ -760,6 +805,24 @@
 			path = RegexKitLite;
 			sourceTree = "<group>";
 		};
+		26196C851E76DABD00D4D087 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				26196C861E76DABD00D4D087 /* FMDatabase.h */,
+				26196C871E76DABD00D4D087 /* FMDatabase.m */,
+				26196C881E76DABD00D4D087 /* FMDatabaseAdditions.h */,
+				26196C891E76DABD00D4D087 /* FMDatabaseAdditions.m */,
+				26196C8A1E76DABD00D4D087 /* FMDatabasePool.h */,
+				26196C8B1E76DABD00D4D087 /* FMDatabasePool.m */,
+				26196C8C1E76DABD00D4D087 /* FMDatabaseQueue.h */,
+				26196C8D1E76DABD00D4D087 /* FMDatabaseQueue.m */,
+				26196C8E1E76DABD00D4D087 /* FMDB.h */,
+				26196C8F1E76DABD00D4D087 /* FMResultSet.h */,
+				26196C901E76DABD00D4D087 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		2638298A1E719587000E2E8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +991,7 @@
 		4200F715562D5B7ADFC2C068 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26196C961E76DB0700D4D087 /* libsqlite3.tbd */,
 				263828F71E6DB7CC000E2E8A /* Foundation.framework */,
 				263828F51E6DB715000E2E8A /* libicucore.A.tbd */,
 				26166A3A1E6C42C200BF4435 /* libicucore.tbd */,
@@ -1129,6 +1193,8 @@
 				2606B99C1E00423400DB56E7 /* JXDiscoveryController.m in Sources */,
 				261662A31E62D6D000BF4435 /* SDWebImageManager+MJ.m in Sources */,
 				26166A391E6C428800BF4435 /* RegexKitLite.m in Sources */,
+				26196C921E76DABD00D4D087 /* FMDatabaseAdditions.m in Sources */,
+				26196C951E76DABD00D4D087 /* FMResultSet.m in Sources */,
 				2606B9961E00421300DB56E7 /* JXMeController.m in Sources */,
 				26B77FFC1E51FA7E008B5641 /* JXAccount.m in Sources */,
 				261660891E5B437200BF4435 /* JXHomeStatusCell.m in Sources */,
@@ -1145,6 +1211,7 @@
 				261E55F31E589A830062C9EE /* JXShowUserParams.m in Sources */,
 				261E55F01E588B350062C9EE /* JXSendStatusWithOutPhotoParams.m in Sources */,
 				263829A51E73842A000E2E8A /* JXGlobalViewController.m in Sources */,
+				263829C51E74E28E000E2E8A /* JXHomeStatusDetailResult.m in Sources */,
 				2606B9A21E0042CE00DB56E7 /* JXNavigationController.m in Sources */,
 				2638299C1E7363A5000E2E8A /* JXGlobalSwitchItem.m in Sources */,
 				263829961E719E4A000E2E8A /* JXGlobalCell.m in Sources */,
@@ -1154,6 +1221,7 @@
 				2606B9991E00422300DB56E7 /* JXMessageController.m in Sources */,
 				263829901E7195C7000E2E8A /* JXGlobalGroup.m in Sources */,
 				261662341E5C8B3000BF4435 /* JXHomeRetweetFrame.m in Sources */,
+				26196C911E76DABD00D4D087 /* FMDatabase.m in Sources */,
 				26166A3E1E6C569900BF4435 /* JXEmotionAttachment.m in Sources */,
 				26DB7E991E59DF1B0057ACDC /* JXHomeUnreadeCountModel.m in Sources */,
 				267678BE1E534E0D000D2492 /* JXStatus.m in Sources */,
@@ -1182,8 +1250,10 @@
 				261E55ED1E58801D0062C9EE /* JXComposePhotoView.m in Sources */,
 				263829A21E736DFA000E2E8A /* JXBageView.m in Sources */,
 				267678B61E533D6C000D2492 /* JXHomeParams.m in Sources */,
+				26196C9D1E783C5200D4D087 /* NSString+File.m in Sources */,
 				260A85E61E01A68900B30406 /* JXTextField.m in Sources */,
 				2638299F1E736841000E2E8A /* JXGlobalTextItem.m in Sources */,
+				26196C931E76DABD00D4D087 /* FMDatabasePool.m in Sources */,
 				261662A11E62D6D000BF4435 /* MJPhotoToolbar.m in Sources */,
 				2638293A1E6EF706000E2E8A /* JXStatusLabel.m in Sources */,
 				261662AA1E63110200BF4435 /* JXEmotionKeyboard.m in Sources */,
@@ -1198,17 +1268,21 @@
 				26B77FE11E508AC8008B5641 /* JXOAuthController.m in Sources */,
 				261662AD1E63156D00BF4435 /* JXEmotionListView.m in Sources */,
 				2606B98B1E00418A00DB56E7 /* JXTabBarController.m in Sources */,
+				263829BD1E744FDB000E2E8A /* JXHomeDetailTopToolbar.m in Sources */,
 				26B77FEE1E509561008B5641 /* MBProgressHUD.m in Sources */,
 				2616629C1E62D6D000BF4435 /* MJPhoto.m in Sources */,
+				263829BA1E743A4A000E2E8A /* JXHomeDetailBottomToolbar.m in Sources */,
 				2606B9071DFEF41300DB56E7 /* UIView+JXExtension.m in Sources */,
 				26166A0B1E67065600BF4435 /* JXEmotionGridView.m in Sources */,
 				26588CA31E4CB0CA00AEE4BC /* JXNewFeatureCell.m in Sources */,
+				26196C941E76DABD00D4D087 /* FMDatabaseQueue.m in Sources */,
 				2606B9051DFEF41300DB56E7 /* UIBarButtonItem+JXExtension.m in Sources */,
 				261662311E5C8B1000BF4435 /* JXHomeOriginalFrame.m in Sources */,
 				26B77FEC1E509561008B5641 /* MBProgressHUD+MJ.m in Sources */,
 				26DB7E961E59DED80057ACDC /* JXHomeUnreadeCountParam.m in Sources */,
 				2632164B1E4A15F500E00F11 /* JXTabBar.m in Sources */,
 				26588C9A1E4CAFA100AEE4BC /* JXChooseControllerTool.m in Sources */,
+				263829C21E74DFF9000E2E8A /* JXHomeStatusDetailParams.m in Sources */,
 				261662881E627CCF00BF4435 /* JXHomeStatusPhotosView.m in Sources */,
 				261662411E5DD15600BF4435 /* JXHomeDetailFrame.m in Sources */,
 			);

@@ -13,6 +13,8 @@
 #import "JXUserModel.h" // 用户信息模型
 #import "JXHomeUnreadeCountParam.h" // 请求未读消息模型参数
 #import "JXHomeUnreadeCountModel.h" // 未读消息模型
+#import "JXHomeStatusDetailParams.h" // 微博详细信息评论请求参数
+#import "JXHomeStatusDetailResult.h" // 微博详细信息评论返回模型
 
 @interface JXStatusTool : NSObject
 
@@ -24,5 +26,8 @@
 
 // 获取未读个数
 + (void)unreadeCountWithParams:(JXHomeUnreadeCountParam *)params success:(void (^)(JXHomeUnreadeCountModel *homeStatus))success failure:(void (^)(NSError *error))failure;
+
+// 微博详细信息评论
++ (void)detailCountWithParams:(JXHomeStatusDetailParams *)params success:(void (^)(JXHomeStatusDetailResult *homeStatus))success failure:(void (^)(NSError *error))failure;
 
 @end
