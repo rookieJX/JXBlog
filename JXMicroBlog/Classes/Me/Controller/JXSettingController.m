@@ -78,7 +78,15 @@
     
     // 设置组的所有行数据
     JXGlobalTextItem *clean = [JXGlobalTextItem itemWithTitle:@"清理缓存"];
-    clean.text = @"100M";
+    clean.globalItemOperationBlock = ^{
+        JXLog(@"处理点击事件");
+//        [MBProgressHUD showMessage:@"正在清理缓存"];
+    };
+    // 获取文件目录路径
+    NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filePath = [fileName stringByAppendingPathComponent:@"/default/com.hackemist.SDWebImageCache.default"];
+    long long size = [self fileSizeAtFile:filePath];
+    clean.text = [NSString stringWithFormat:@"(%.1f M)",size / (1000.0 * 1000.0)];
     
     JXGlobalArrowItem *opinion = [JXGlobalArrowItem itemWithTitle:@"意见反馈"];
     
@@ -89,7 +97,53 @@
 
 }
 
+- (long long)fileSizeAtApp {
 
+    // 获取文件目录路径
+    NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filePath = [fileName stringByAppendingPathComponent:@"/default/com.hackemist.SDWebImageCache.default"];
+    
+    // 文件管理
+    NSFileManager *fileManager = [NSFileManager defaultManager];
 
+    long long size = 0;
+    
+    // 获取文件夹中的所有文件
+    NSArray *files = [fileManager subpathsAtPath:filePath];
+    // 将文件中所有的文件拼接为路劲
+    for (NSString *subPath in files) {
+        NSString *subFile = [filePath stringByAppendingPathComponent:subPath];
+        NSDictionary *dict = [fileManager attributesOfItemAtPath:subFile error:nil];
+        size += [dict[NSFileSize] longLongValue];
+    }
+    return size;
+}
+
+- (long long)fileSizeAtFile:(NSString *)file
+{
+    // 1.文件管理者
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    
+    // 2.判断file是否存在
+    BOOL isDirectory = NO;
+    BOOL fileExists = [mgr fileExistsAtPath:file isDirectory:&isDirectory];
+    // 文件\文件夹不存在
+    if (fileExists == NO) return 0;
+    
+    // 3.判断file是否为文件夹
+    if (isDirectory) { // 是文件夹
+        NSArray *subpaths = [mgr contentsOfDirectoryAtPath:file error:nil];
+        long long totalSize = 0;
+        for (NSString *subpath in subpaths) {
+            NSString *fullSubpath = [file stringByAppendingPathComponent:subpath];
+            totalSize += [self fileSizeAtFile:fullSubpath];
+        }
+        return totalSize;
+    } else { // 不是文件夹, 文件
+        // 直接计算当前文件的尺寸
+        NSDictionary *attr = [mgr attributesOfItemAtPath:file error:nil];
+        return [attr[NSFileSize] longLongValue];
+    }
+}
 
 @end
