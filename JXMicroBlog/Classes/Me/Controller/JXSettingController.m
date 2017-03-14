@@ -78,15 +78,30 @@
     
     // 设置组的所有行数据
     JXGlobalTextItem *clean = [JXGlobalTextItem itemWithTitle:@"清理缓存"];
-    clean.globalItemOperationBlock = ^{
-        JXLog(@"处理点击事件");
-//        [MBProgressHUD showMessage:@"正在清理缓存"];
-    };
     // 获取文件目录路径
     NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [fileName stringByAppendingPathComponent:@"/default/com.hackemist.SDWebImageCache.default"];
     long long size = [self fileSizeAtFile:filePath];
     clean.text = [NSString stringWithFormat:@"(%.1f M)",size / (1000.0 * 1000.0)];
+    
+    __weak typeof(clean) weakClearCache = clean;
+    __weak typeof(self) weakVc = self;
+    clean.globalItemOperationBlock = ^{
+        [MBProgressHUD showMessage:@"正在清除缓存...."];
+        // 清除缓存
+        NSFileManager *mgr = [NSFileManager defaultManager];
+        [mgr removeItemAtPath:filePath error:nil];
+        
+        // 设置subtitle
+        weakClearCache.text = nil;
+        
+        // 刷新表格
+        [weakVc.tableView reloadData];
+        
+        [MBProgressHUD hideHUD];
+    };
+    
+    
     
     JXGlobalArrowItem *opinion = [JXGlobalArrowItem itemWithTitle:@"意见反馈"];
     
